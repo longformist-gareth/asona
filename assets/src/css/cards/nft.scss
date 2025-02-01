@@ -1,0 +1,65 @@
+.kg-nft {
+    &-card {
+        @extend %flow-large;
+        margin-inline-end: auto;
+        margin-inline-start: auto;
+        max-width: max-content;
+        width: 100%;
+    }
+
+    &-card-container {
+        border-radius: var(--asona--radius--m);
+        box-shadow: inset 0 0 0 1px var(--asona--color--border);
+        color: var(--asona--color--contrast);
+        display: grid;
+        max-width: 550px;
+        overflow: hidden;
+        transition: box-shadow 0.2s;
+        width: 100%;
+
+        &:hover {
+            box-shadow: inset 0 0 0 1px var(--asona--color--border-highlight);
+            color: inherit;
+        }
+    }
+
+    &-image {
+        position: relative;
+        z-index: -1;
+    }
+
+    &-metadata {
+        padding: var(--asona--space--card);
+    }
+
+    &-header {
+        align-items: flex-start;
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    &-title {
+        margin: 0;
+    }
+
+    &-logo,
+    &-opensea-logo {
+        margin-top: 0.125rem;
+        object-fit: scale-down;
+        width: 6.25rem;
+    }
+
+    &-creator {
+        font-size: var(--asona--font-size--2xs);
+        margin: 0.25rem 0 0;
+
+        span {
+            font-weight: var(--asona--font-weight--base-bold);
+        }
+    }
+
+    &-description {
+        @extend %body-small-text;
+    }
+}

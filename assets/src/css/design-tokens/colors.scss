@@ -1,0 +1,142 @@
+:root,
+[data-theme=reset] {
+    --asona--color--accent: var(--ghost-accent-color, #101cbc);
+
+    --asona--color--primary: var(--asona--color--accent);
+    --asona--color--primary-contrast: #fff;
+
+    --asona--color--secondary: rgba(0, 0, 0, 0.04); // chips, tags
+    --asona--color--secondary-contrast: rgba(0, 0, 0, 0.75);
+
+    --asona--color--tertiary: #feffc3; // selection, mark
+    --asona--color--tertiary-contrast: rgba(0, 0, 0, 0.9);
+
+    --asona--color--base: #fff;
+    --asona--color--contrast: rgba(0, 0, 0, 0.75); // text
+    --asona--color--contrast-highlight: rgba(0, 0, 0, 0.9); // headings
+    --asona--color--contrast-dim: rgba(0, 0, 0, 0.65); // meta
+    --asona--color--contrast-dimmer: rgba(0, 0, 0, 0.55); // placeholders
+
+    --asona--color--link: var(--asona--color--primary);
+    --asona--color--link--hover: var(--asona--color--secondary);
+    --asona--color--link--hover-contrast: var(--asona--color--primary);
+
+    --asona--color--border: rgba(0, 0, 0, 0.12);
+    --asona--color--border-dim: rgba(0, 0, 0, 0.06);
+    --asona--color--border-highlight: rgba(0, 0, 0, 0.3);
+
+    --asona--color--success: rgba(27, 243, 0, 0.3);
+    --asona--color--success-contrast: rgba(0, 0, 0, 0.85);
+    --asona--color--error: rgba(255, 0, 0, 0.1);
+    --asona--color--error-contrast: rgba(0, 0, 0, 0.85);
+    --asona--color--shadow: rgba(0, 0, 0, 0.07);
+    --asona--color--shadow-highlight: rgba(0, 0, 0, 0.15);
+    --asona--color--overlay-backdrop: rgba(0, 0, 0, 0.6);
+    --asona--color--overlay-image: rgba(0, 0, 0, 0.4);
+
+    --asona--theme--highlight--color--base: #f4f6f8;
+    --asona--theme--light--color--base: #f9fafb;
+    --asona--theme--dark--color--base: #18171c;
+}
+
+[data-theme] {
+    background-color: var(--asona--color--base);
+    color: var(--asona--color--contrast);
+}
+
+[data-theme=highlight] {
+    --asona--color--base: var(--asona--theme--highlight--color--base);
+}
+
+[data-theme=light] {
+    --asona--color--base: var(--asona--theme--light--color--base);
+}
+
+[data-theme=dark] {
+    --asona--color--base: var(--asona--theme--dark--color--base);
+}
+
+[data-theme=accent] {
+    --asona--color--base: var(--asona--color--accent);
+}
+
+[data-theme=dark],
+[data-theme=accent] {
+    --asona--color--primary: rgba(255, 255, 255, 1);
+    --asona--color--primary-contrast: rgba(0, 0, 0, 0.9);
+    --asona--color--secondary: rgba(255, 255, 255, 0.2);
+    --asona--color--secondary-contrast: rgba(255, 255, 255, 0.9);
+
+    --asona--color--contrast: rgba(255, 255, 255, 0.95);
+    --asona--color--contrast-highlight: #fff;
+    --asona--color--contrast-dim: rgba(255, 255, 255, 0.8);
+    --asona--color--contrast-dimmer: rgba(255, 255, 255, 0.7);
+
+    --asona--color--border: rgba(255, 255, 255, 0.3);
+    --asona--color--border-dim: rgba(255, 255, 255, 0.1);
+    --asona--color--border-highlight: rgba(255, 255, 255, 0.55);
+
+    --asona--color--link: var(--asona--color--primary);
+    --asona--color--link--hover: var(--asona--color--secondary);
+    --asona--color--link--hover-contrast: var(--asona--color--secondary-contrast);
+
+    :focus-visible {
+        outline-color: rgba(255, 255, 255, 0.95);
+    }
+}
+
+@mixin prefers-color-scheme-dark {
+    --asona--color--base: #18171c;
+
+    --asona--color--primary: var(--asona--dark-mode--color--accent, var(--asona--color--accent));
+    --asona--color--secondary: rgba(255, 255, 255, 0.1);
+    --asona--color--secondary-contrast: rgba(255, 255, 255, 0.9);
+
+    --asona--color--contrast: rgba(255, 255, 255, 0.8);
+    --asona--color--contrast-highlight: rgba(255, 255, 255, 0.95);
+    --asona--color--contrast-dim: rgba(255, 255, 255, 0.7);
+    --asona--color--contrast-dimmer: rgba(255, 255, 255, 0.6);
+
+    --asona--color--border: rgba(255, 255, 255, 0.1);
+    --asona--color--border-dim: rgba(255, 255, 255, 0.05);
+    --asona--color--border-highlight: rgba(255, 255, 255, 0.2);
+
+    --asona--color--link: var(--asona--dark-mode--color--link, rgba(255, 255, 255, 0.9));
+    --asona--color--link--hover: var(--asona--color--secondary);
+    --asona--color--link--hover-contrast: var(--asona--color--secondary-contrast);
+
+    --asona--color--shadow: rgba(0, 0, 0, 0.2);
+    --asona--color--shadow-highlight: rgba(0, 0, 0, 0.3);
+    --asona--color--overlay-image: rgba(0, 0, 0, 0.5);
+
+    :focus-visible {
+        outline-color: rgba(255, 255, 255, 0.7);
+    }
+
+    a:hover,
+    button:hover {
+        color: rgba(255, 255, 255, 1);
+    }
+
+    [data-theme=accent] {
+        --asona--color--base: var(--asona--dark-mode--color--accent, var(--asona--color--accent));
+    }
+
+    [data-theme=dark],
+    [data-theme=light],
+    [data-theme=highlight] {
+        --asona--color--base: #1d1c22;
+    }
+}
+
+:root[data-has-dark-mode-support][data-prefers-color-scheme=dark],
+:root[data-has-dark-mode-support][data-prefers-color-scheme=dark] [data-theme=reset] {
+    @include prefers-color-scheme-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root[data-has-dark-mode-support]:not([data-prefers-color-scheme]),
+    :root[data-has-dark-mode-support]:not([data-prefers-color-scheme]) [data-theme=reset] {
+        @include prefers-color-scheme-dark;
+    }
+}

@@ -1,0 +1,42 @@
+{{#if isSecondary}}
+    {{#if @site.secondary_navigation}}
+    <nav class="nav-secondary">
+        <ul class="nav-secondary__menu">
+            {{#foreach navigation type='secondary'}}
+            <li class="nav-secondary__menu-item">
+                <a class="nav-secondary__menu-link" href="{{url absolute='true'}}">
+                    <span class="nav-secondary__menu-title">{{label}}</span>
+                </a>
+            </li>
+            {{/foreach}}
+        </ul>
+    </nav>
+    {{/if}}
+{{else}}
+    <nav class="nav-primary">
+        <ul class="nav-primary__menu">
+            {{#foreach navigation}}
+            {{^match label '[submenu]'}} {{^match label '[/submenu]'}}
+            {{!-- Get the next menu item and see is it a submenu --}}
+            {{#match (lookup (lookup @site.navigation @number) 'label') '[submenu]' }}
+                <li class="nav-primary__menu-item" data-has-submenu>
+                    <button class="nav-primary__menu-link" data-open-submenu aria-expanded="false" aria-controls="{{concat 'submenu-' slug '-' @number}}">
+                        <span class="nav-primary__menu-title">{{label}}</span>
+                    </button>
+                    <ul id="{{concat 'submenu-' slug '-' @number}}" class="nav-primary__submenu nav-submenu" aria-hidden="true">
+            {{else}}
+                <li class="nav-primary__menu-item">
+                    <a class="nav-primary__menu-link" href="{{url absolute='true'}}">
+                        <span class="nav-primary__menu-title">{{label}}</span>
+                    </a>
+                </li>
+            {{/match}}
+            {{/match}} {{/match}}
+            {{#match label '[/submenu]'}}
+                    </ul>
+                </li>
+            {{/match}}
+            {{/foreach}}
+        </ul>
+    </nav>
+{{/if}}

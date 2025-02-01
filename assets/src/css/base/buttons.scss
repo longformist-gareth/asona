@@ -1,0 +1,62 @@
+button {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.btn,
+.button,
+[type=reset],
+[type=submit] {
+    appearance: button;
+    background: var(--asona--color--primary);
+    border: 1px solid var(--asona--color--primary);
+    border-radius: var(--asona--radius--2xl);
+    color: var(--asona--color--primary-contrast);
+    cursor: pointer;
+    display: inline-block;
+    font-family: var(--asona--font-family--elements);
+    font-size: var(--asona--font-size--s);
+    font-weight: var(--asona--font-weight--elements);
+    line-height: 1.4;
+    padding-block-end: var(--asona--space--xs);
+    padding-block-start: var(--asona--space--xs);
+    padding-inline-end: 1.5em;
+    padding-inline-start: 1.5em;
+    transition: opacity 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
+    vertical-align: middle;
+    width: auto;
+
+    &[data-btn-size=small] {
+        font-size: var(--asona--font-size--2xs);
+        padding-block-end: var(--asona--space--2xs);
+        padding-block-start: var(--asona--space--2xs);
+    }
+
+    &[data-btn-size=big] {
+        @media (min-width: #{px-to-em(600px)}) {
+            font-size: var(--asona--font-size--m);
+        }
+    }
+
+    &:hover {
+        background-color: transparent;
+        color: var(--asona--color--primary);
+    }
+
+    &[data-btn-variant=ghost] {
+        background-color: var(--asona--color--base);
+        border-color: var(--asona--color--border);
+        color: var(--asona--color--contrast);
+
+        &:hover {
+            border-color: var(--asona--color--border-highlight);
+            color: var(--asona--color--contrast);
+        }
+    }
+}

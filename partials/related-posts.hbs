@@ -1,0 +1,10 @@
+{{#get 'posts' filter='tags:[{{tags[*].slug}}]+id:-{{id}}' include='tags,authors' limit='4' as |related|}}{{#if related}}
+<div class="related-posts section" data-canvas-grid="container">
+    <h3 class="related-posts__title section-title">{{t 'You might also like'}}</h3>
+    <div class="related-posts__grid grid">
+        {{#foreach related}}
+            {{> 'post-card' image_sizes='related-posts'}}
+        {{/foreach}}
+    </div>
+</div>
+{{/if}}{{/get}}

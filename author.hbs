@@ -1,0 +1,50 @@
+{{!< default}}
+
+{{#author}}
+<div class="site-heading" data-layout-grid="custom">
+    {{#if profile_image}}
+        <figure class="site-heading__figure">
+            <img class="site-heading__image"
+                width="96" height="96"
+                src="{{img_url profile_image size='364' format='webp'}}"
+                srcset="{{> 'helpers/image-srcset' feature_image=profile_image format='webp'}}"
+                sizes="{{~> 'helpers/image-sizes' feature_image=profile_image image_sizes='site-heading'}}"
+                loading="eager"
+                alt="{{name}}"
+                onload="this.setAttribute('data-loaded', true)">
+        </figure>
+    {{/if}}
+    <div class="site-heading__content">
+        <h1 class="site-heading__title">{{name}}</h1>
+        {{#if bio}}
+            <p class="site-heading__description">{{bio}}</p>
+        {{/if}}
+        <div class="site-heading__meta">
+            {{#if website}}
+                <a class="site-heading__meta-item" href="{{website}}" aria-label="{{t 'Go to my website'}}" target="_blank" rel="noopener noreferrer">{{> 'icons/link'}}</a>
+            {{/if}}
+            {{#if facebook}}
+                <a class="site-heading__meta-item" href="{{facebook_url}}" aria-label="{{t 'Follow on {social}' social='Facebook'}}" target="_blank" rel="noopener noreferrer">{{> 'icons/socials/facebook'}}</a>
+            {{/if}}
+            {{#if twitter}}
+                <a class="site-heading__meta-item" href="{{twitter_url}}" aria-label="{{t 'Follow on {social}' social='X'}}" target="_blank" rel="noopener noreferrer">{{> 'icons/socials/x'}}</a>
+            {{/if}}
+            {{#if location}}
+                <span class="site-heading__meta-item">{{> 'icons/globe'}}<span class="visually-hidden">{{t 'Location'}}</span> {{location}}</span>
+            {{/if}}
+        </div>
+    </div>
+    <div class="site-heading__info">
+        {{plural ../pagination.total empty=(t '<span>0</span> Articles') singular=(t '<span>%</span> Article') plural=(t '<span>%</span> Articles')}}
+    </div>
+</div>
+{{/author}}
+
+<div class="site-content section">
+    <div class="posts-feed" data-layout-grid="columns">
+        {{#foreach posts}}
+            {{> 'post-card' image_sizes='posts-feed'}}
+        {{/foreach}}
+    </div>
+    {{pagination}}
+</div>

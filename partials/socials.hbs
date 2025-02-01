@@ -1,0 +1,21 @@
+<div class="socials">
+    {{#if @site.facebook}}
+        <a href="{{facebook_url}}" aria-label="{{t 'Follow on {social}' social='Facebook'}}" target="_blank" rel="noopener noreferrer" class="socials__link" data-social="facebook">{{> 'icons/socials/facebook'}}</a>
+    {{/if}}
+    {{#if @site.twitter}}
+        <a href="{{twitter_url}}" aria-label="{{t 'Follow on {social}' social='X'}}" target="_blank" rel="noopener noreferrer" class="socials__link" data-social="x">{{> 'icons/socials/x'}}</a>
+    {{/if}}
+    {{#if @custom.instagram_url}}
+        <a href="{{@custom.instagram_url}}" aria-label="{{t 'Follow on {social}' social='Instagram'}}" target="_blank" rel="noopener noreferrer" class="socials__link" data-social="instagram">{{> 'icons/socials/instagram'}}</a>
+    {{/if}}
+    {{#if @custom.tiktok_url}}
+        <a href="{{@custom.tiktok_url}}" aria-label="{{t 'Follow on {social}' social='TikTok'}}" target="_blank" rel="noopener noreferrer" class="socials__link" data-social="tiktok">{{> 'icons/socials/tiktok'}}</a>
+    {{/if}}
+    {{#if @custom.youtube_url}}
+        <a href="{{@custom.youtube_url}}" aria-label="{{t 'Follow on {social}' social='YouTube'}}" target="_blank" rel="noopener noreferrer" class="socials__link" data-social="youtube">{{> 'icons/socials/youtube'}}</a>
+    {{/if}}
+    {{#if @custom.linkedin_url}}
+        <a href="{{@custom.linkedin_url}}" aria-label="{{t 'Follow on {social}' social='LinkedIn'}}" target="_blank" rel="noopener noreferrer" class="socials__link" data-social="linkedin">{{> 'icons/socials/linkedin'}}</a>
+    {{/if}}
+</div>
+

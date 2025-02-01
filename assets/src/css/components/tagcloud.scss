@@ -1,0 +1,23 @@
+.tagcloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+
+    a {
+        @extend [data-theme];
+        @extend [data-theme=highlight];
+        border: 0;
+        border-radius: var(--asona--radius--s);
+        font-family: var(--asona--font-family--elements);
+        font-size: var(--asona--font-size--2xs);
+        font-weight: var(--asona--font-weight--elements);
+        padding-block-end: var(--asona--space--2xs);
+        padding-block-start: var(--asona--space--2xs);
+        padding-inline-end: var(--asona--space--s);
+        padding-inline-start: var(--asona--space--s);
+
+        &:hover {
+            color: var(--asona--color--primary);
+        }
+    }
+}

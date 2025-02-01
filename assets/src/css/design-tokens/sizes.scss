@@ -1,0 +1,15 @@
+:root {
+    --asona--size--container: 1156px;
+    --asona--size--content: 680px;
+    --asona--size--content-wide: 958px;
+
+    --asona--size--header: #{px-to-rem(64px)};
+    --asona--size--logo: #{px-to-rem(40px)};
+
+    --asona--radius--xs: 2px;
+    --asona--radius--s: 4px;
+    --asona--radius--m: 8px;
+    --asona--radius--l: 12px;
+    --asona--radius--xl: 16px;
+    --asona--radius--2xl: 32px;
+}

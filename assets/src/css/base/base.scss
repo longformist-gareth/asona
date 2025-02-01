@@ -1,0 +1,154 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+
+    &:focus-within {
+        scroll-behavior: smooth;
+    }
+
+    // fix for chrome triggering transitions on page load
+    &.js:not([data-dom-content-loaded='true']) * {
+        transition: none;
+    }
+
+    &[data-scroll-disabled] {
+        overscroll-behavior-y: none;
+
+        @media (min-width: #{px-to-em(1000px)}) {
+            margin-right: var(--asona--scrollbar-width);
+        }
+    }
+
+    &[data-transitions-disabled] {
+        *,
+        *::before,
+        *::after {
+            transition: none !important;
+        }
+    }
+}
+
+body {
+    background-color: var(--asona--color--base);
+    color: var(--asona--color--contrast);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+[id] {
+    scroll-margin-block-start: var(--asona--space--scroll);
+
+    &[data-theme] {
+        scroll-margin-block-start: var(--asona--space--scroll-theme);
+    }
+
+    &[tabindex] {
+        outline: none;
+    }
+}
+
+:focus {
+    outline: 0;
+}
+
+:focus-visible {
+    outline: 2px solid var(--asona--color--contrast);
+    outline-offset: 2px;
+}
+
+::selection {
+    background-color: var(--asona--color--tertiary);
+    color: var(--asona--color--tertiary-contrast);
+}
+
+[disabled] {
+    cursor: default;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+mark {
+    background-color: var(--asona--color--tertiary);
+    color: var(--asona--color--tertiary-contrast);
+}
+
+abbr,
+acronym {
+    border-block-end: 1px dotted var(--asona--color--border);
+    cursor: help;
+    text-decoration: none;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+code, kbd, tt, var, samp, pre {
+    @extend [data-theme];
+    @extend [data-theme=highlight];
+    font-family: Courier, monospace;
+    font-size: var(--asona--font-size--xs);
+    padding: 0.125rem 0.25rem;
+}
+
+pre {
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.5rem;
+
+    code, kbd, tt, var, samp {
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+address {
+    @extend %body-small-text;
+    font-style: normal;
+}
+
+// Remove the additional ':invalid' styles in Firefox.
+:-moz-ui-invalid {
+    box-shadow: none;
+}
+
+// Remove all animations, transitions and smooth scroll for people that prefer not to see them
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

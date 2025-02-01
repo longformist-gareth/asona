@@ -1,0 +1,21 @@
+.kg-btn {
+    @extend .button;
+
+    &:not(.kg-btn-accent) {
+        @extend [data-btn-variant=ghost];
+    }
+}
+
+.kg-button-card {
+    align-items: center;
+    display: flex;
+    width: 100%;
+
+    &.kg-align-left {
+        justify-content: flex-start;
+    }
+
+    &.kg-align-center {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,61 @@
+<article class="post-card {{post_class}}" data-layout="{{layout}}" data-has-featured-image="{{#if feature_image}}true{{else}}false{{/if}}">
+
+    {{#if feature_image}}
+    {{!-- Using asona_head we are adding this link preload to the document head. --}}
+    {{#if preload_image}}{{#contentFor 'asona_head'}}
+    <link rel="preload" as="image"
+        imagesrcset="{{> 'helpers/image-srcset' format='webp'}}"
+        imagesizes="{{> 'helpers/image-sizes' image_sizes=image_sizes}}">
+    {{/contentFor}}{{/if}}
+    <a href="{{url}}" class="post-card__media" tabindex="-1">
+        {{!-- We need to use picture tag as Safari doesn't load the correct image size
+        with ajax (Load More) when using srcset inside img tag --}}
+        <picture class="post-card__figure">
+            <source
+                srcset="{{> 'helpers/image-srcset' format='webp'}}"
+                sizes="{{~> 'helpers/image-sizes' image_sizes=image_sizes}}">
+            <img class="post-card__image"
+                width="5" height="3"
+                src="{{img_url feature_image size='760' format='webp'}}"
+                loading="{{#if loading}}{{loading}}{{else}}lazy{{/if}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                onload="this.setAttribute('data-loaded', true)">
+        </picture>
+    </a>
+    {{/if}}
+
+    <div class="post-card__content">
+        {{#primary_tag}}
+            <a href="{{url}}" class="post-card__primary-tag" rel="tag">{{name}}</a>
+        {{/primary_tag}}
+        <a href="{{url}}" class="post-card__content-link">
+            <h2 class="post-card__title">
+                <span class="post-card__title-inner">{{title}}</span>
+            </h2>
+            {{#if excerpt}}
+            {{> 'post-card/meta-excerpt'}}
+            {{/if}}
+            {{#unless access}}
+            {{^has visibility='public'}}
+                <p class="post-card__access">
+                    {{> 'icons/lock'}}
+                    <span class="visually-hidden">{{t 'This article is for'}}</span>
+                    {{#has visibility='members'}}
+                        {{t 'Members only'}}
+                    {{else}}
+                        {{t 'Paid-members only'}}
+                    {{/has}}
+                </p>
+            {{/has}}
+            {{/unless}}
+        </a>
+        <div class="post-card__footer">
+            {{> 'post-card/meta-author'}}
+            {{> 'post-card/meta-date'}}
+            {{#if reading_time}}
+            <span class="post-card__meta post-card__meta--read-time">{{reading_time minute=(t '1 min read') minutes=(t '% min read')}}</span>
+            {{/if}}
+        </div>
+    </div>
+
+</article>

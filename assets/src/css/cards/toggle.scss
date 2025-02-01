@@ -1,0 +1,176 @@
+%details {
+    background: transparent;
+    border: 1px solid var(--asona--color--border);
+    border-radius: var(--asona--radius--s);
+}
+
+%summary {
+    align-items: center;
+    border-block-end: 1px solid transparent;
+    color: var(--asona--color--contrast-highlight);
+    cursor: pointer;
+    display: flex;
+    font-family: var(--asona--font-family--headings);
+    font-size: var(--asona--font-size--h6);
+    font-weight: var(--asona--font-weight--headings);
+    gap: 1rem;
+    justify-content: space-between;
+    line-height: 1.5;
+    padding: var(--asona--space--card-small);
+    position: relative;
+}
+
+%details-content {
+    --asona--flow--content: var(--asona--flow--s);
+    @extend %body-small-text;
+    padding-inline-end: var(--asona--space--card-small);
+    padding-inline-start: var(--asona--space--card-small);
+}
+
+details {
+    @extend %details;
+
+    & + & {
+        --asona--flow--content: 0.5rem;
+    }
+
+    summary {
+        @extend %summary;
+
+        &::after {
+            block-size: 0.375rem;
+            border-block-end-width: 0;
+            border-block-start-width: 1px;
+            border-color: var(--asona--color--contrast-dim);
+            border-inline-end-width: 1px;
+            border-inline-start-width: 0;
+            border-style: solid;
+            content: '';
+            display: block;
+            inline-size: 0.375rem;
+            transform: rotate(135deg);
+            transition: transform 0.3s;
+        }
+    }
+
+    &[open] summary {
+        border-color: var(--asona--color--border);
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    > *:where(:not(summary)) {
+        @extend %details-content;
+    }
+
+    summary + * {
+        margin-block-start: var(--asona--space--card-small);
+    }
+
+    > *:last-child {
+        margin-block-end: var(--asona--space--card-small);
+    }
+}
+
+.kg-toggle {
+    $card: '.kg-toggle-card';
+
+    &-card {
+        @extend %details;
+
+        + #{$card} {
+            --asona--flow--content: 0.5rem;
+        }
+    }
+
+    &-heading {
+        @extend %summary;
+        transition: border-color 0.2s;
+
+        &-text {
+            color: inherit;
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+        }
+
+        html.no-js &,
+        #{$card}[data-kg-toggle-state=open] &,
+        #{$card}[data-kg-toggle-state=opening] & {
+            border-color: var(--asona--color--border);
+        }
+    }
+
+    &-card-icon {
+        align-items: center;
+        background: none;
+        block-size: 2rem;
+        border: 0;
+        color: var(--asona--color--contrast-dim);
+        display: flex;
+        flex: 0 0 auto;
+        inline-size: 2rem;
+        justify-content: center;
+        margin-inline-end: -0.625rem;
+
+        &::after {
+            block-size: 100%;
+            content: '';
+            inline-size: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+
+        svg {
+            inline-size: 0.625rem;
+            transition: transform 0.2s;
+
+            #{$card}[data-kg-toggle-state=open] &,
+            #{$card}[data-kg-toggle-state=opening] & {
+                transform: rotate(-180deg);
+            }
+        }
+
+        path {
+            fill: none;
+            fill-rule: evenodd;
+            stroke: currentcolor;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 2;
+        }
+    }
+
+    &-content {
+        @extend %details-content;
+        max-height: var(--asona--toggle--max-height, 0);
+        overflow: hidden;
+        transition: max-height 0.3s;
+
+        > :first-child {
+            margin-block-start: var(--asona--space--card-small);
+        }
+
+        > :last-child {
+            margin-block-end: var(--asona--space--card-small);
+        }
+
+        #{$card}[data-kg-toggle-state=close] & {
+            max-height: 0;
+            visibility: hidden;
+        }
+
+        #{$card}[data-kg-toggle-state=open] & {
+            max-height: none;
+        }
+
+        html.no-js #{$card} & {
+            max-height: none;
+            visibility: visible;
+        }
+    }
+}

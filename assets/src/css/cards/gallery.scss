@@ -1,0 +1,41 @@
+
+.kg-gallery {
+    &-card {
+        --asona--gallery--gap: var(--asona--space--2xs);
+    }
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--asona--gallery--gap);
+    }
+
+    &-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--asona--gallery--gap);
+        justify-content: center;
+    }
+
+    &-image {
+        background: var(--asona--color--border);
+        border-radius: var(--asona--radius--m);
+        flex: 1;
+        overflow: hidden;
+
+        img {
+            display: block;
+            height: 100%;
+            margin: 0;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            &:nth-of-type(3n) {
+                flex: 1 1 100% !important;
+            }
+        }
+    }
+}

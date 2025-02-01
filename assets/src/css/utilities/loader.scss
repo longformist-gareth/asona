@@ -1,0 +1,31 @@
+.loader {
+    display: inline-block;
+    height: 2rem;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+    width: 2rem;
+
+    &::after {
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        border: 3px solid var(--asona--color--border);
+        border-color: var(--asona--color--border) transparent var(--asona--color--border) transparent;
+        border-radius: 50%;
+        content: '';
+        display: inline-block;
+        height: 2rem;
+        width: 2rem;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(-360deg);
+    }
+
+    to {
+        transform: none;
+    }
+}

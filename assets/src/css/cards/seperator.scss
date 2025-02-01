@@ -1,0 +1,38 @@
+hr {
+    border: 0;
+    clear: both;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+    overflow: visible;
+    position: relative;
+
+    &,
+    &::before,
+    &::after {
+        background-color: var(--asona--color--contrast);
+        block-size: 0.3125rem;
+        border-radius: 50%;
+        inline-size: 0.3125rem;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        inset-block-start: 0;
+        position: absolute;
+    }
+
+    &::before {
+        inset-inline-end: calc(100% + 1.3125rem);
+    }
+
+    &::after {
+        inset-inline-start: calc(100% + 1.3125rem);
+    }
+
+    * + &,
+    + *:where(:not(h1,h2,h3,h4,h5,h6)) {
+        --asona--flow--content: var(--asona--flow--xl) !important;
+    }
+}

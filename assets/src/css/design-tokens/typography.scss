@@ -1,0 +1,28 @@
+:root {
+    --asona--font-size--3xs: #{px-to-rem(13px)}; // meta
+    --asona--font-size--2xs: #{px-to-rem(14px)}; // smaller elements
+    --asona--font-size--xs: #{px-to-rem(15px)}; // buttons
+    --asona--font-size--s: #{px-to-rem(16px)}; // body small
+    --asona--font-size--m: #{px-to-rem(18px)}; // body
+    --asona--font-size--l: #{fluid-size(19px, 20px)}; // body large
+    --asona--font-size--xl: #{fluid-size(20px, 24px)}; // h4
+    --asona--font-size--2xl: #{fluid-size(22px, 28px)}; // h3
+    --asona--font-size--3xl: #{fluid-size(24px, 34px)}; // h2
+    --asona--font-size--4xl: #{fluid-size(30px, 42px)}; // h1
+    --asona--font-size--5xl: #{fluid-size(38px, 60px)}; // huge headers
+    --asona--font-size--6xl: #{fluid-size(128px, 290px)}; // display
+
+    --asona--font-size--2xs-xs: #{fluid-size(14px, 15px)};
+    --asona--font-size--2xs-s: #{fluid-size(14px, 16px)};
+    --asona--font-size--xs-s: #{fluid-size(15px, 16px)};
+
+    --asona--font-size--base-large: var(--asona--font-size--l);
+    --asona--font-size--base-small: var(--asona--font-size--s);
+    --asona--font-size--base: var(--asona--font-size--m);
+    --asona--font-size--h1: var(--asona--font-size--4xl);
+    --asona--font-size--h2: var(--asona--font-size--3xl);
+    --asona--font-size--h3: var(--asona--font-size--2xl);
+    --asona--font-size--h4: var(--asona--font-size--xl);
+    --asona--font-size--h5: var(--asona--font-size--l);
+    --asona--font-size--h6: var(--asona--font-size--base);
+}

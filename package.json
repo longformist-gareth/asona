@@ -1,0 +1,236 @@
+{
+    "name": "asona",
+    "description": "Creative Blog & Magazine Theme",
+    "demo": "https://ghost.apalodi.com/asona/",
+    "version": "1.2.0",
+    "engines": {
+        "ghost": ">=5.0.0",
+        "node": "16"
+    },
+    "license": "gpl-3.0",
+    "author": {
+        "name": "Apalodi",
+        "email": "support@apalodi.com",
+        "url": "https://apalodi.com"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Magazine",
+            "Blog"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme",
+        "apalodi"
+    ],
+    "config": {
+        "posts_per_page": 18,
+        "card_assets": {
+            "exclude": [
+                "blockquote",
+                "bookmark",
+                "button",
+                "callout",
+                "file",
+                "gallery",
+                "header",
+                "nft",
+                "product",
+                "toggle",
+                "signup"
+            ]
+        },
+        "image_sizes": {
+            "364": {
+                "width": 364
+            },
+            "562": {
+                "width": 562
+            },
+            "760": {
+                "width": 760
+            },
+            "958": {
+                "width": 958
+            },
+            "1160": {
+                "width": 1160
+            },
+            "1520": {
+                "width": 1520
+            },
+            "1916": {
+                "width": 1916
+            }
+        },
+        "custom": {
+            "dark_mode": {
+                "type": "select",
+                "options": [
+                    "Disabled",
+                    "Always On",
+                    "Switcher"
+                ],
+                "default": "Disabled"
+            },
+            "dark_mode_logo": {
+                "type": "image"
+            },
+            "highlight_style": {
+                "type": "select",
+                "options": [
+                    "Classic",
+                    "Modern"
+                ],
+                "default": "Classic"
+            },
+            "post_card_details": {
+                "type": "select",
+                "options": [
+                    "Author",
+                    "Author & Date",
+                    "Author & Excerpt",
+                    "Author & Date & Excerpt",
+                    "Date",
+                    "Date & Excerpt",
+                    "Excerpt",
+                    "None"
+                ],
+                "default": "Author"
+            },
+            "copyright_text": {
+                "type": "text",
+                "default": "© {sitetitle} {year} - Published with {ghostlink}"
+            },
+            "show_social_icons": {
+                "type": "boolean",
+                "default": true
+            },
+            "instagram_url": {
+                "type": "text",
+                "default": ""
+            },
+            "tiktok_url": {
+                "type": "text",
+                "default": ""
+            },
+            "youtube_url": {
+                "type": "text",
+                "default": ""
+            },
+            "linkedin_url": {
+                "type": "text",
+                "default": ""
+            },
+            "post_style": {
+                "type": "select",
+                "options": [
+                    "Classic",
+                    "Modern"
+                ],
+                "default": "Modern",
+                "group": "post"
+            },
+            "newsletter_text": {
+                "type": "text",
+                "default": "Get the latest news from lifestyle, technology, business and travel.",
+                "group": "post"
+            },
+            "show_authors": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
+            },
+            "show_sharing_buttons": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
+            },
+            "show_related_posts": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
+            }
+        }
+    },
+    "scripts": {
+        "start": "run-s --silent check:version watch",
+        "serve": "vite dev",
+        "watch": "vite build -w",
+        "build": "run-s --silent lint:* build:production",
+        "build:production": "cross-env NODE_ENV=production vite build",
+        "check:version": "check-node-version --package -p",
+        "lint": "run-p --silent lint:*",
+        "lint:js": "cross-env standard",
+        "lint:css": "cross-env stylelint '**/*.scss'",
+        "lint:fix": "run-p --silent lint:*:fix",
+        "lint:js:fix": "npm run lint:js -- --fix",
+        "lint:css:fix": "npm run lint:css -- --fix",
+        "test": "gscan .",
+        "zip": "run-s build && zip -r asona.zip ./ -x '.*' '__MACOSX' 'node_modules/*' 'package-lock.json' 'custom-dev-*.hbs' 'collection-dev-*.hbs'"
+    },
+    "devDependencies": {
+        "check-node-version": "^4.2.1",
+        "cross-env": "^7.0.3",
+        "eslint": "^9.3.0",
+        "gscan": "^4.43.1",
+        "node-sass-glob-importer": "^5.3.3",
+        "npm-run-all": "^4.1.5",
+        "sass": "^1.77.2",
+        "standard": "^17.1.0",
+        "stylelint": "^16.5.0",
+        "stylelint-config-recess-order": "^5.0.1",
+        "stylelint-config-sass-guidelines": "^11.1.0",
+        "stylelint-config-standard": "^36.0.0",
+        "stylelint-scss": "^6.3.0",
+        "vite": "^5.2.11"
+    },
+    "stylelint": {
+        "extends": "stylelint-config-sass-guidelines",
+        "plugins": [
+            "stylelint-scss"
+        ],
+        "rules": {
+            "at-rule-no-unknown": null,
+            "scss/at-rule-no-unknown": true,
+            "scss/at-extend-no-missing-placeholder": null,
+            "selector-class-pattern": null,
+            "max-nesting-depth": null,
+            "selector-max-compound-selectors": 4,
+            "selector-no-qualifying-type": [
+                true,
+                {
+                    "ignore": [
+                        "attribute",
+                        "class"
+                    ]
+                }
+            ]
+        },
+        "ignoreFiles": [
+            "assets/dist/**"
+        ]
+    },
+    "eslintConfig": {
+        "parser": "@babel/eslint-parser",
+        "parserOptions": {
+            "requireConfigFile": false
+        },
+        "rules": {
+            "indent": [
+                "error",
+                4
+            ]
+        }
+    },
+    "eslintIgnore": [
+        "assets/dist/**"
+    ],
+    "browserslist": [
+        "supports array-flat"
+    ]
+}

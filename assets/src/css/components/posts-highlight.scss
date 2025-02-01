@@ -1,0 +1,21 @@
+.posts-highlight {
+    [data-layout=highlight] {
+        grid-column: 1 / -1;
+    }
+
+    &[data-highlight=modern] {
+        row-gap: var(--asona--space--l);
+    }
+
+    @media (min-width: #{px-to-em(600px)}) {
+        --asona--grid--columns: 3;
+
+        .post-card:where(:not([data-layout=highlight])) {
+            --asona--post-card--font-size--title: #{fluid-size(17px, 21px, 600px, 1100px)};
+        }
+    }
+
+    @media (min-width: #{px-to-em(760px)}) {
+        --asona--space--row: var(--asona--space--site);
+    }
+}

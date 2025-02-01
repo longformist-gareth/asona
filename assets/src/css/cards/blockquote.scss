@@ -1,0 +1,41 @@
+blockquote {
+    --asona--blockquote--padding: var(--asona--space--s);
+    --asona--blockquote--border-width: var(--asona--space--2xs);
+
+    border-inline-start: var(--asona--blockquote--border-width) solid var(--asona--color--border-dim);
+    border-radius: var(--asona--radius--m);
+    color: var(--asona--color--contrast-highlight);
+    font-family: var(--asona--font-family--headings);
+    font-size: var(--asona--font-size--h4);
+    font-weight: var(--asona--font-weight--headings);
+    margin-inline-start: calc(-1 * (var(--asona--blockquote--padding) + var(--asona--blockquote--border-width)));
+    padding-inline-start: var(--asona--blockquote--padding);
+
+    &,
+    + *:where(:not(h1,h2,h3,h4,h5,h6)) {
+        --asona--flow--content: var(--asona--flow--l);
+    }
+
+    cite {
+        color: var(--asona--color--contrast-dim);
+        font-size: var(--asona--font-size--base-small);
+        font-style: normal;
+        font-weight: var(--asona--font-weight--base-bold);
+    }
+}
+
+.kg-blockquote-alt {
+    --asona--blockquote-alt--padding: calc(var(--asona--blockquote--padding) + var(--asona--blockquote--border-width) - var(--asona--space--site-align-full));
+    @extend [data-theme];
+    @extend [data-theme=accent];
+
+    border: 0;
+    color: var(--asona--color--primary);
+    margin-inline-end: calc(-1 * var(--asona--blockquote-alt--padding));
+    margin-inline-start: calc(-1 * var(--asona--blockquote-alt--padding));
+    padding: var(--asona--blockquote-alt--padding);
+
+    @media (min-width: #{px-to-em(600px)}) {
+        --asona--blockquote-alt--padding: calc(var(--asona--blockquote--padding) + var(--asona--blockquote--border-width));
+    }
+}

@@ -1,0 +1,25 @@
+.error-page {
+    gap: 0;
+    justify-content: center;
+    padding-block-end: var(--asona--space--section);
+    padding-block-start: var(--asona--space--m);
+    text-align: center;
+
+    &__title {
+        font-size: var(--asona--font-size--2xl);
+        margin-block-end: var(--asona--space--s-m);
+        margin-block-start: 0;
+    }
+
+    &__code {
+        color: var(--asona--color--primary);
+        font-size: var(--asona--font-size--6xl);
+        font-weight: var(--asona--font-weight--headings);
+        line-height: 1;
+        margin: 0;
+    }
+
+    &__link {
+        justify-self: center;
+    }
+}

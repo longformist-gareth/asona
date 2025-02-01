@@ -1,0 +1,23 @@
+.nav-secondary {
+    &__menu {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin-inline-end: calc(-1 * var(--asona--space--xs));
+        margin-inline-start: calc(-1 * var(--asona--space--xs));
+        padding: 0;
+        row-gap: var(--asona--space--xs);
+    }
+
+    &__menu-item {
+        font-family: var(--asona--font-family--elements);
+        font-size: var(--asona--font-size--xs);
+        font-weight: var(--asona--font-weight--elements);
+        margin: 0;
+    }
+
+    &__menu-link {
+        color: var(--asona--color--contrast);
+        padding: var(--asona--space--xs);
+    }
+}

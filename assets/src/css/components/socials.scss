@@ -1,0 +1,28 @@
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--asona--space--3xs);
+    justify-content: center;
+    margin: calc(-1 * var(--asona--space--2xs));
+
+    [data-social] {
+        background: transparent;
+        border-radius: 50%;
+        color: var(--asona--color--contrast-dimmer);
+        display: flex;
+        padding: var(--asona--space--2xs);
+
+        &:hover {
+            color: var(--asona--color--primary);
+        }
+
+        &:focus-visible {
+            outline-offset: #{px-to-rem(6px)};
+        }
+
+        svg {
+            height: #{px-to-rem(22px)};
+            width: #{px-to-rem(22px)};
+        }
+    }
+}

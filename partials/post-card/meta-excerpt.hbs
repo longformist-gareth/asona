@@ -1,0 +1,17 @@
+{{!-- Well Ghost doesn't have many functionalities so we have to do it like this --}}
+{{#match @custom.post_card_details '=' 'Excerpt'}}
+<p class="post-card__excerpt">{{excerpt words='25'}}</p>
+{{else}}
+    {{#match @custom.post_card_details '=' 'Author & Excerpt'}}
+    <p class="post-card__excerpt">{{excerpt words='25'}}</p>
+    {{else}}
+        {{#match @custom.post_card_details '=' 'Date & Excerpt'}}
+        <p class="post-card__excerpt">{{excerpt words='25'}}</p>
+        {{else}}
+            {{#match @custom.post_card_details '=' 'Author & Date & Excerpt'}}
+            <p class="post-card__excerpt">{{excerpt words='25'}}</p>
+            {{/match}}
+        {{/match}}
+    {{/match}}
+{{/match}}
+

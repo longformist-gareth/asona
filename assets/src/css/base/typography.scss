@@ -1,0 +1,134 @@
+body {
+    font-family: var(--asona--font-family--base);
+    font-size: var(--asona--font-size--base);
+    font-weight: var(--asona--font-weight--base);
+    line-height: 1.6;
+}
+
+%body-small-text {
+    font-size: var(--asona--font-size--base-small);
+    line-height: 1.6;
+}
+
+%headings {
+    color: var(--asona--color--contrast-highlight);
+    font-family: var(--asona--font-family--headings);
+    font-weight: var(--asona--font-weight--headings);
+    letter-spacing: 0.0125em;
+    line-height: 1.4;
+    margin: 0;
+
+    * + & {
+        margin-block-start: var(--asona--flow--content);
+    }
+
+    /* stylelint-disable-next-line scss/selector-no-redundant-nesting-selector */
+    *:where(:not(&)) + & {
+        --asona--flow--content: var(--asona--flow--xl);
+    }
+
+    em {
+        font-family: inherit;
+        font-weight: inherit;
+    }
+}
+
+%heading-1 {
+    font-size: var(--asona--font-size--h1);
+    font-weight: var(--asona--font-weight--headings);
+    line-height: 1.35;
+}
+
+%heading-2 {
+    font-size: var(--asona--font-size--h2);
+}
+
+
+%heading-3 {
+    font-size: var(--asona--font-size--h3);
+}
+
+
+%heading-4 {
+    font-size: var(--asona--font-size--h4);
+    line-height: 1.2;
+}
+
+%heading-5 {
+    font-size: var(--asona--font-size--h5);
+}
+
+
+%heading-6 {
+    font-size: var(--asona--font-size--h6);
+}
+
+%heading-5,
+%heading-6 {
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    @extend %headings;
+}
+
+h1, .h1 {
+    @extend %heading-1;
+}
+
+
+h2, .h2 {
+    @extend %heading-2;
+}
+
+
+h3, .h3 {
+    @extend %heading-3;
+}
+
+h4, .h4 {
+    @extend %heading-4;
+}
+
+h5, .h5 {
+    @extend %heading-5;
+}
+
+h6, .h6 {
+    @extend %heading-6;
+}
+
+strong {
+    font-weight: var(--asona--font-weight--base-bold);
+}
+
+p, ul, ol, pre, table, video, audio, figure, blockquote, aside, form, fieldset, dl, address, details, hr {
+    margin: 0;
+
+    * + & {
+        margin-block-start: var(--asona--flow--content);
+    }
+}
+
+%flow-large {
+    &,
+    + *:where(:not(h1,h2,h3,h4,h5,h6)) {
+        --asona--flow--content: var(--asona--flow--l);
+    }
+
+    * {
+        --asona--flow--content: var(--asona--flow--m);
+    }
+}
+
+%flow-xlarge {
+    &,
+    + *:where(:not(h1,h2,h3,h4,h5,h6)) {
+        --asona--flow--content: var(--asona--flow--xl);
+    }
+
+    * {
+        --asona--flow--content: var(--asona--flow--m);
+    }
+}

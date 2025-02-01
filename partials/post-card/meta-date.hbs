@@ -1,0 +1,17 @@
+{{!-- Well Ghost doesn't have many functionalities so we have to do it like this --}}
+{{#match @custom.post_card_details '=' 'Date'}}
+<time class="post-card__meta post-card__meta--date" datetime="{{date format='YYYY-MM-DD'}}">{{date}}</time>
+{{else}}
+    {{#match @custom.post_card_details '=' 'Author & Date'}}
+    <time class="post-card__meta post-card__meta--date" datetime="{{date format='YYYY-MM-DD'}}">{{date}}</time>
+    {{else}}
+        {{#match @custom.post_card_details '=' 'Date & Excerpt'}}
+        <time class="post-card__meta post-card__meta--date" datetime="{{date format='YYYY-MM-DD'}}">{{date}}</time>
+        {{else}}
+            {{#match @custom.post_card_details '=' 'Author & Date & Excerpt'}}
+            <time class="post-card__meta post-card__meta--date" datetime="{{date format='YYYY-MM-DD'}}">{{date}}</time>
+            {{/match}}
+        {{/match}}
+    {{/match}}
+{{/match}}
+

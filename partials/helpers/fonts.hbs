@@ -1,0 +1,77 @@
+{{!--
+To download Google Fonts you can use a service like https://gwfh.mranftl.com/fonts
+Set the CSS Custom Properties at the bottom to change fonts used by the theme.
+
+Preload fonts to make sure they display faster. --}}
+<link rel="preload" as="font" type="font/woff2" href="{{asset 'fonts/jost-v14-latin_latin-ext-regular.woff2'}}" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="{{asset 'fonts/jost-v14-latin_latin-ext-500.woff2'}}" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="{{asset 'fonts/encode-sans-semi-condensed-v10-latin_latin-ext-600.woff2'}}" crossorigin>
+
+<style>
+    @font-face {
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('{{asset 'fonts/jost-v14-latin_latin-ext-regular.woff2'}}') format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Jost';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url('{{asset 'fonts/jost-v14-latin_latin-ext-italic.woff2'}}') format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url('{{asset 'fonts/jost-v14-latin_latin-ext-500.woff2'}}') format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('{{asset 'fonts/jost-v14-latin_latin-ext-600.woff2'}}') format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Jost';
+        font-style: italic;
+        font-weight: 600;
+        font-display: swap;
+        src: url('{{asset 'fonts/jost-v14-latin_latin-ext-600italic.woff2'}}') format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Encode Sans Semi Condensed';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('{{asset 'fonts/encode-sans-semi-condensed-v10-latin_latin-ext-600.woff2'}}') format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Encode Sans Semi Condensed';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('{{asset 'fonts/encode-sans-semi-condensed-v10-latin-700.woff2'}}') format('woff2');
+    }
+
+    :root {
+        --asona--font-family--base: 'Jost', Helvetica, sans-serif;
+        --asona--font-family--headings: 'Encode Sans Semi Condensed', Helvetica, sans-serif;
+        --asona--font-family--elements: 'Jost', Helvetica, sans-serif;
+        --asona--font-weight--base: 400;
+        --asona--font-weight--base-bold: 600;
+        --asona--font-weight--headings: 600;
+        --asona--font-weight--headings-small: 700;
+        --asona--font-weight--elements: 500;
+    }
+</style>

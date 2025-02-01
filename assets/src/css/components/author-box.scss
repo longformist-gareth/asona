@@ -1,0 +1,48 @@
+.author-box {
+    $self: &;
+
+    align-items: center;
+    display: flex;
+    gap: var(--asona--space--s);
+
+    &__avatar {
+        border-radius: 50%;
+        display: block;
+        flex: 1 0 auto;
+        max-inline-size: #{px-to-rem(60px)};
+        overflow: hidden;
+    }
+
+    &__avatar-placeholder {
+        background-color: var(--asona--color--secondary);
+        block-size: #{px-to-rem(60px)};
+        color: var(--asona--color--contrast-dim);
+        display: grid;
+        inline-size: #{px-to-rem(60px)};
+        place-items: center;
+
+        svg {
+            height: #{px-to-rem(20px)};
+            width: #{px-to-rem(20px)};
+        }
+    }
+
+    &__avatar-image {
+        max-block-size: #{px-to-rem(60px)};
+        object-fit: cover;
+    }
+
+    &__description {
+        --asona--flow--content: 0.25rem;
+        font-size: var(--asona--font-size--xs);
+        line-height: 1.5;
+    }
+
+    &[data-author-bio=true] {
+        align-items: start;
+
+        #{$self}__name {
+            margin-block-start: 0.125rem;
+        }
+    }
+}

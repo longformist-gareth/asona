@@ -1,0 +1,55 @@
+.site-footer {
+    $self: &;
+
+    border-block-start: 1px solid var(--asona--color--border-dim);
+    padding-block-end: var(--asona--space--section);
+    padding-block-start: var(--asona--space--section);
+
+    &__content {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--asona--space--m);
+
+        @media (max-width: #{px-to-em(899px)}) {
+            justify-content: center;
+            text-align: center;
+        }
+
+        @media (min-width: #{px-to-em(900px)}) {
+            gap: var(--asona--space--s);
+        }
+    }
+
+    &__navigation {
+        flex-grow: 1;
+
+        @media (max-width: #{px-to-em(899px)}) {
+            .nav-secondary__menu {
+                justify-content: center;
+            }
+        }
+    }
+
+    &__socials {
+        @media (max-width: #{px-to-em(899px)}) {
+            order: -1;
+            width: 100%;
+        }
+    }
+
+    &__copyright {
+        color: var(--asona--color--contrast-dim);
+        font-size: var(--asona--font-size--2xs);
+        margin: 0;
+
+        #{$self}__socials + & {
+            width: 100%;
+        }
+
+        :where(a) {
+            color: var(--asona--color--contrast);
+            font-weight: inherit;
+        }
+    }
+}

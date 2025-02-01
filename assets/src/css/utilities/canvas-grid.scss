@@ -1,0 +1,49 @@
+[data-canvas-grid] {
+    @include canvas-grid;
+}
+
+[data-canvas-grid=full] {
+    > * {
+        grid-column: start/end;
+    }
+}
+
+[data-canvas-grid=container] {
+    > * {
+        grid-column: container-start/container-end;
+    }
+}
+
+[data-canvas-grid=full] {
+    > * {
+        grid-column: full-start/full-end;
+    }
+}
+
+[data-canvas-grid=wide] {
+    > * {
+        grid-column: wide-start/wide-end;
+    }
+}
+
+[data-canvas-grid=content] {
+    > * {
+        grid-column: content-start/content-end;
+    }
+}
+
+[data-canvas-grid-self=full] {
+    grid-column: start/end;
+}
+
+[data-canvas-grid-self=container] {
+    grid-column: container-start/container-end;
+}
+
+[data-canvas-grid-self=wide] {
+    grid-column: wide-start/wide-end;
+}
+
+[data-canvas-grid-self=content] {
+    grid-column: content-start/content-end;
+}

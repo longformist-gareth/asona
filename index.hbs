@@ -1,0 +1,29 @@
+{{!< default}}
+
+{{!-- If we aren't on paged page load the highlight section and show the first 4 posts --}}
+{{^is 'paged'}}
+    {{> 'posts-highlight' style=@custom.highlight_style}}
+    {{> 'featured-posts'}}
+{{/is}}
+
+<div class="site-content section">
+    <div class="posts-feed" data-layout-grid="columns">
+        {{!-- This works also for paginated pages as we are loading posts from="5"
+        and then loading additional one after if there are any. --}}
+
+        {{!-- We are displaying the first 4 post in the highlight section
+        so we need to start the loop from the 5th post. --}}
+        {{#foreach posts from='5'}}
+            {{> 'post-card' image_sizes='posts-feed'}}
+        {{/foreach}}
+
+        {{!-- Posts per page are 18 but we need 4 more for the homepage (4 highlight + 18 grid posts)
+        so we load additional from next page --}}
+        {{#get 'posts' include='tags,authors' limit=@config.posts_per_page page=pagination.next}}
+            {{#foreach posts limit=4}}
+                {{> 'post-card' image_sizes='posts-feed'}}
+            {{/foreach}}
+        {{/get}}
+    </div>
+    {{pagination}}
+</div>

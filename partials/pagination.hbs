@@ -1,0 +1,32 @@
+{{#match pages '>' 1}}
+<nav class="pagination">
+    <div class="pagination__container container">
+        <p class="pagination__info">
+            {{t 'Page' }}
+            <span data-pagination-page="{{page}}">{{page}}</span>
+            {{t 'of'}}
+            <span
+            {{#is 'index'}}
+                {{#get 'posts' limit=@config.posts_per_page page=pages}}
+                    {{!-- If the last page has less or equal than 4 posts show the prev as total number of pages--}}
+                    {{#match posts.length '<=' 4}}
+                        data-pagination-pages="{{pagination.prev}}">{{pagination.prev}}
+                    {{else}}
+                        data-pagination-pages="{{pagination.pages}}">{{pagination.pages}}
+                    {{/match}}
+                {{/get}}
+            {{else}}
+                data-pagination-pages="{{pages}}">{{pages}}
+            {{/is}}
+            </span>
+        </p>
+        {{#if next}}
+            <a class="pagination-load-more" href="{{page_url next}}" data-state="initial">
+                <span class="loader pagination-load-more__loader"></span>
+                <span class="pagination-load-more__button">{{t 'Load More'}}</span>
+                <span class="pagination-load-more__error" aria-hidden="true">{{t 'Something went wrong with loading more posts'}}</span>
+            </a>
+        {{/if}}
+    </div>
+</nav>
+{{/match}}

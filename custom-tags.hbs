@@ -1,0 +1,44 @@
+{{!< default}}
+
+{{#post}}
+
+{{!-- Add cucstom class to the body. --}}
+{{#contentFor 'body_class'}} page-template-tags{{/contentFor}}
+
+<div class="site-heading" data-layout-grid="custom">
+    {{#if feature_image}}
+        <figure class="site-heading__figure">
+            <img class="site-heading__image"
+                width="96" height="96"
+                src="{{img_url feature_image size='364' format='webp'}}"
+                srcset="{{> 'helpers/image-srcset' format='webp'}}"
+                sizes="{{~> 'helpers/image-sizes' image_sizes='site-heading'}}"
+                loading="eager"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                onload="this.setAttribute('data-loaded', true)">
+        </figure>
+    {{/if}}
+    <div class="site-heading__content">
+        <h1 class="site-heading__title">{{title}}</h1>
+        {{#if custom_excerpt}}
+            <p class="site-heading__description">{{custom_excerpt}}</p>
+        {{/if}}
+    </div>
+    <div class="site-heading__info">
+        {{#get "tags" limit="all"}}
+            {{plural tags.length empty=(t '<span>0</span> Tags') singular=(t '<span>%</span> Tag') plural=(t '<span>%</span> Tags')}}
+        {{/get}}
+    </div>
+</div>
+
+<div class="site-content section">
+    <div class="tax-feed" data-layout-grid="columns">
+        {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+        {{#foreach tags}}
+            {{> 'tag-card' image_sizes='tax-feed'}}
+        {{/foreach}}
+        {{/get}}
+    </div>
+</div>
+
+{{/post}}

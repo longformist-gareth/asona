@@ -1,0 +1,93 @@
+.tax-card {
+    $self: &;
+
+    border: 1px solid var(--asona--color--border);
+    border-radius: var(--asona--radius--m);
+    display: flex;
+    gap: var(--asona--space--s);
+    padding: var(--asona--space--s);
+
+    &__media {
+        border-radius: 50%;
+        display: block;
+        flex: 0 0 auto;
+        inline-size: #{fluid-size(60px, 96px)};
+        outline: 0;
+        position: relative;
+    }
+
+    &__figure {
+        background: var(--asona--color--border);
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__image {
+        aspect-ratio: 1 / 1;
+        inline-size: 100%;
+        object-fit: cover;
+    }
+
+    &__content {
+        flex: 1 1 auto;
+        position: relative;
+        z-index: 2;
+
+        &-link {
+            display: block;
+
+            > * + * {
+                margin-block-start: var(--asona--space--3xs);
+            }
+
+            &::before {
+                content: '';
+                inset: 0;
+                position: absolute;
+                z-index: 1;
+            }
+
+            &:hover {
+                color: inherit;
+            }
+        }
+    }
+
+    &__title {
+        font-size: var(--asona--font-size--l);
+        line-height: 1.5;
+
+        &-inner {
+            background-image: linear-gradient(to bottom, var(--asona--color--border-dim) 0%, var(--asona--color--border-dim) 100%);
+            background-position: 0 0.8em;
+            background-repeat: no-repeat;
+            background-size: 0%;
+            transition: background 0.2s;
+
+            @media (min-width: #{px-to-em(1000px)}) {
+                #{$self}__content-link:hover &,
+                #{$self}__media:hover ~ #{$self}__content & {
+                    background-size: 100%;
+                }
+            }
+        }
+    }
+
+    &__excerpt {
+        font-size: var(--asona--font-size--base-small);
+        line-height: 1.5;
+    }
+
+    &__footer {
+        color: var(--asona--color--contrast-dimmer);
+        column-gap: var(--asona--space--s);
+        display: flex;
+        flex-wrap: wrap;
+        font-family: var(--asona--font-family--elements);
+        font-size: var(--asona--font-size--3xs);
+        font-weight: var(--asona--font-weight--elements);
+        margin-block-start: var(--asona--space--2xs);
+    }
+}

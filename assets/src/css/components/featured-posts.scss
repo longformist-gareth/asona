@@ -1,0 +1,31 @@
+.featured-posts {
+    &__title {
+        background-color: var(--asona--color--primary);
+        border-radius: 35px;
+        color: var(--asona--color--primary-contrast);
+        font-family: var(--asona--font-family--elements);
+        font-size: var(--asona--font-size--2xs);
+        font-weight: var(--asona--font-weight--elements);
+        line-height: inherit;
+        margin-block-end: var(--asona--space--m);
+        max-width: max-content;
+        padding-block-end: var(--asona--space--3xs);
+        padding-block-start: var(--asona--space--3xs);
+        padding-inline-end: var(--asona--space--s);
+        padding-inline-start: var(--asona--space--s);
+    }
+
+    &__grid {
+        @media (min-width: #{px-to-em(600px)}) {
+            --asona--grid--columns: 2;
+        }
+
+        @media (min-width: #{px-to-em(1000px)}) {
+            --asona--grid--columns: 4;
+
+            .post-card {
+                --asona--post-card--font-size--title: #{px-to-rem(19px)};
+            }
+        }
+    }
+}

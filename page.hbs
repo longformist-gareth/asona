@@ -1,0 +1,19 @@
+{{!< default}}
+
+{{#post}}
+
+<article class="article {{post_class}}" data-page-title="{{ @page.show_title_and_feature_image }}">
+
+    {{#match @page.show_title_and_feature_image}}
+        {{> 'article-header' style='Classic'}}
+    {{/match}}
+
+    <div class="article-main section" data-canvas-grid="content">
+        <div class="article-content" data-canvas-grid="content" data-canvas-grid-self="full">
+            {{content}}
+        </div>
+    </div>
+
+</article>
+
+{{/post}}

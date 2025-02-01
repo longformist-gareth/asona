@@ -1,0 +1,9 @@
+.posts-feed {
+    @media (min-width: #{px-to-em(600px)}) {
+        --asona--grid--columns: 2;
+    }
+
+    @media (min-width: #{px-to-em(1000px)}) {
+        --asona--grid--columns: 3;
+    }
+}

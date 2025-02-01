@@ -1,0 +1,86 @@
+.pagination {
+    margin-block-start: var(--asona--space--row);
+    text-align: center;
+
+    &__container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__info {
+        color: var(--asona--color--contrast-dim);
+        font-family: var(--asona--font-family--elements);
+        font-size: var(--asona--font-size--3xs);
+        font-weight: var(--asona--font-weight--elements);
+        inline-size: 100%;
+        margin-block-start: 0.5rem;
+        order: 2;
+    }
+}
+
+.pagination-load-more {
+    $self: &;
+    border-radius: var(--asona--radius--2xl);
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+
+    &__loader {
+        display: block;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        margin-block-start: -1rem;
+        margin-inline-start: -1rem;
+        opacity: 0;
+        position: absolute;
+        transform: translate3d(0, 30px, 0);
+        transition: opacity 0.3s 0.1s, transform 0.3s 0.1s;
+        visibility: hidden;
+    }
+
+    &__button {
+        @extend .button;
+        @extend [data-btn-variant=ghost];
+        transition: border-color 0.2s, opacity 0.3s 0.1s, transform 0.3s 0.1s;
+    }
+
+    &__error {
+        --asona--color--base: var(--asona--color--error);
+        --asona--color--contrast: var(--asona--color--error-contrast);
+        background-color: var(--asona--color--base);
+        border-radius: var(--asona--radius--s);
+        color: var(--asona--color--contrast);
+        display: none;
+        font-size: var(--asona--font-size--2xs);
+        font-weight: var(--asona--font-weight--elements);
+        margin-block-start: var(--asona--space--2xs);
+        padding-block-end: var(--asona--space--2xs);
+        padding-block-start: var(--asona--space--2xs);
+        padding-inline-end: var(--asona--space--xs);
+        padding-inline-start: var(--asona--space--xs);
+    }
+
+    &[data-state=loading] {
+        #{$self}__loader {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            visibility: visible;
+
+            &::after {
+                animation-name: rotate;
+            }
+        }
+
+        #{$self}__button {
+            opacity: 0;
+            transform: translate3d(0, -20px, 0);
+        }
+    }
+
+    &[data-state=error] {
+        #{$self}__error {
+            display: block;
+        }
+    }
+}

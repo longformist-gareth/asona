@@ -1,0 +1,17 @@
+{{!< default}}
+
+{{#post}}
+
+<article class="article {{post_class}}">
+
+    {{> 'article-header' style='Modern'}}
+
+    <div class="article-main section" data-canvas-grid="content">
+        <div class="article-content" data-canvas-grid="content" data-canvas-grid-self="full">
+            {{content}}
+        </div>
+    </div>
+
+</article>
+
+{{/post}}

@@ -1,0 +1,24 @@
+{{#foreach authors}}
+    <div class="author-box" {{#if bio}}data-author-bio="true"{{/if}}>
+        <a href="{{url}}" aria-hidden="true" tabindex="-1" class="author-box__avatar">
+            {{#if profile_image}}
+                <figure class="author-box__avatar-figure">
+                    <img width="70" height="70" class="author-box__avatar-image" src="{{img_url profile_image size='364'}}" alt="{{name}}" loading="lazy">
+                </figure>
+            {{else}}
+                <div class="author-box__avatar-placeholder">
+                    {{> 'icons/avatar'}}
+                </div>
+            {{/if}}
+        </a>
+        <div class="author-box__info">
+            <h5 class="author-box__name">
+                <span class="visually-hidden">{{t 'Posted by'}}</span>
+                <a href="{{url}}" class="author-box__name-link">{{name}}</a>
+            </h5>
+            {{#if bio}}
+                <p class="author-box__description">{{bio}}</p>
+            {{/if}}
+        </div>
+    </div>
+{{/foreach}}

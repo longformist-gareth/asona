@@ -1,0 +1,136 @@
+fieldset {
+    border: 0;
+    padding: 0;
+
+    legend {
+        margin-block-end: var(--asona--flow--s);
+
+        + * {
+            margin-block-start: 0;
+        }
+    }
+}
+
+legend {
+    color: var(--asona--color--contrast-highlight);
+    font-family: var(--asona--font-family--headings-small);
+    font-size: var(--asona--font-size--h5);
+    font-weight: var(--asona--font-weight--headings-small);
+    padding: 0;
+}
+
+label {
+    color: var(--asona--color--contrast);
+    font-size: var(--asona--font-size--base-small);
+
+}
+
+input,
+select,
+textarea {
+    border: 1px solid var(--asona--color--border);
+    border-radius: var(--asona--radius--s);
+    color: var(--asona--color--contrast);
+    font-family: inherit;
+    font-size: var(--asona--font-size--base-small);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0.875rem 1rem;
+    transition: border-color 0.2s;
+    width: 100%;
+
+    &::placeholder {
+        color: var(--asona--color--contrast-dimmer);
+    }
+
+    &:focus-visible {
+        border-color: var(--asona--color--border-highlight);
+        outline: 0;
+    }
+}
+
+select {
+    appearance: none;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,<svg fill='rgba(0,0,0,0.6)' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/></svg>");
+    background-position: calc(100% - 1rem) center;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    align-items: center;
+    appearance: none;
+    display: inline-flex;
+    height: 1.25rem;
+    justify-content: center;
+    line-height: 0;
+    margin: -0.175rem 0.25rem 0 0;
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
+    width: 1.25rem;
+}
+
+input[type=checkbox] {
+    &:checked::before {
+        border: solid var(--asona--color--primary);
+        border-width: 0 2px 2px 0;
+        content: '';
+        height: 0.625rem;
+        margin-top: -0.125rem;
+        transform: rotate(45deg);
+        width: 0.3125rem;
+    }
+}
+
+input[type=radio] {
+    border-radius: 100%;
+
+    &:checked::before {
+        background-color: var(--asona--color--primary);
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 0.375rem;
+        width: 0.375rem;
+    }
+}
+
+input[type=color] {
+    padding: 0;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+    height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type=search] {
+    appearance: textfield; /* 1 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+    appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+::-webkit-file-upload-button {
+    appearance: button; /* 1 */
+    font: inherit; /* 2 */
+}

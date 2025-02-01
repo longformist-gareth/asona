@@ -1,0 +1,12 @@
+{{#get 'posts' filter='featured:true' limit='4' include='tags,authors' as |featured|}}
+{{#if featured}}
+<div class="featured-posts section" data-canvas-grid="container" data-theme="accent">
+    <h3 class="featured-posts__title">{{t 'Featured'}}</h3>
+    <div class="featured-posts__grid grid">
+        {{#foreach featured}}
+            {{> 'post-card' image_sizes='featured-posts'}}
+        {{/foreach}}
+    </div>
+</div>
+{{/if}}
+{{/get}}

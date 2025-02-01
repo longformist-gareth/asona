@@ -1,0 +1,59 @@
+{{!< default}}
+
+{{#post}}
+
+<article class="article {{post_class}}">
+
+    {{> 'article-header' style=@custom.post_style}}
+
+    <div class="article-main section" data-canvas-grid="content">
+        <div class="article-content" data-canvas-grid="content" data-canvas-grid-self="full">
+            {{content}}
+        </div>
+
+        {{#if tags}}
+            <div class="article-tags">
+                <div class="article-tags__cloud tagcloud">{{tags separator=''}}</div>
+            </div>
+        {{/if}}
+
+        {{#if @custom.show_sharing_buttons}}
+            <div class="article-sharing">
+                {{> 'sharing'}}
+            </div>
+        {{/if}}
+
+        {{#if @custom.show_authors}}
+            <div class="article-authors">
+                {{> 'author-box'}}
+            </div>
+        {{/if}}
+
+        {{#if @site.members_enabled}}
+            {{#if @custom.newsletter_text}}
+                <div class="article-newsletter">
+                    {{> 'newsletter-box'}}
+                </div>
+            {{/if}}
+        {{/if}}
+    </div>
+
+    <footer class="article-footer">
+        {{#if @custom.show_related_posts}}
+            {{> 'related-posts'}}
+        {{/if}}
+
+        {{> 'featured-posts'}}
+
+        {{#if comments}}
+            <div class="article-comments section" data-canvas-grid="content">
+                <div class="comments">
+                    {{comments}}
+                </div>
+            </div>
+        {{/if}}
+    </footer>
+
+</article>
+
+{{/post}}

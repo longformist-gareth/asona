@@ -1,0 +1,51 @@
+<header class="article-header section" data-canvas-grid="content" data-post-type="{{#is 'page'}}page{{else}}post{{/is}}" data-section="first" data-style="{{#match style 'Classic'}}classic{{else}}modern{{/match}}" data-has-featured-image="{{#if feature_image}}true{{else}}false{{/if}}">
+    <div class="article-header__content">
+        {{#primary_tag}}
+            <a href="{{url}}" class="article-header__primary-tag" rel="tag">{{name}}</a>
+        {{/primary_tag}}
+        <h1 class="article-header__title">
+            <span class="article-header__title-inner">{{title}}</span>
+        </h1>
+        {{#if custom_excerpt}}
+            <p class="article-header__excerpt">{{custom_excerpt}}</p>
+        {{/if}}
+        {{#is 'post'}}
+        <div class="article-header__footer">
+            <span class="article-header__meta article-header__meta--author">
+                <span class="article-header__meta-info">{{t 'By'}}</span>
+                <a href="{{primary_author.url}}" class="article-header__meta-link">{{primary_author.name}}</a>
+            </span>
+            <time class="article-header__meta article-header__meta--date" datetime="{{date format='YYYY-MM-DD'}}">{{date}}</time>
+            {{#if reading_time}}
+            <span class="article-header__meta article-header__meta--read-time">{{reading_time minute=(t '1 min read') minutes=(t '% min read')}}</span>
+            {{/if}}
+        </div>
+        {{/is}}
+    </div>
+    {{#if feature_image}}
+    {{!-- Using asona_head we are adding this link preload to the document head. --}}
+    {{#contentFor 'asona_head'}}
+        <link rel="preload" as="image"
+            imagesrcset="{{> 'helpers/image-srcset' format='webp'}}"
+            {{#match style 'Classic'}}
+            imagesizes="{{~> 'helpers/image-sizes' image_sizes='article-header-classic'}}"
+            {{else}}
+            imagesizes="{{~> 'helpers/image-sizes' image_sizes='article-header-modern' }}"
+            {{~/match~}}>
+    {{/contentFor}}
+    <figure class="article-header__figure">
+        <img class="article-header__image"
+            width="5" height="3"
+            src="{{img_url feature_image size='760' format='webp'}}"
+            srcset="{{> 'helpers/image-srcset' format='webp'}}"
+            {{#match style 'Classic'}}
+            sizes="{{~> 'helpers/image-sizes' image_sizes='article-header-classic'}}"
+            {{else}}
+            sizes="{{~> 'helpers/image-sizes' image_sizes='article-header-modern' }}"
+            {{/match}}
+            loading="eager"
+            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+            onload="this.setAttribute('data-loaded', true)">
+    </figure>
+    {{/if}}
+</header>

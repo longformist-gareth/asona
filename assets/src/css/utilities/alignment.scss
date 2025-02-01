@@ -1,0 +1,28 @@
+.kg-width-full,
+.kg-width-wide {
+    @extend %flow-large;
+
+    [data-canvas-grid] > & {
+        @include canvas-grid;
+        grid-column: start / end;
+
+        > * {
+            grid-column: full-start / full-end;
+        }
+    }
+}
+
+.kg-width-full {
+    position: relative;
+    z-index: 2;
+}
+
+.kg-width-wide {
+    [data-canvas-grid] > & {
+        @media (min-width: #{px-to-em(820px)}) {
+            > * {
+                grid-column: wide-start / wide-end;
+            }
+        }
+    }
+}

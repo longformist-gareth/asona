@@ -1,0 +1,67 @@
+table {
+    border-collapse: collapse;
+    border-radius: var(--asona--radius--s);
+    border-spacing: 0;
+    font-size: var(--asona--font-size--xs);
+    line-height: 1.6;
+    text-indent: 0;
+    width: 100%;
+
+    &.has-fixed-layout {
+        table-layout: fixed;
+    }
+
+    &.aligncenter {
+        display: table;
+        margin: 0 auto;
+        text-align: start;
+        width: auto;
+    }
+
+    td, th {
+        border-block-start: 1px solid var(--asona--color--border-dim);
+        padding: 0.5rem;
+    }
+
+    td > :last-child {
+        margin-bottom: 0;
+    }
+
+    th,
+    td,
+    caption {
+        font-weight: inherit;
+        text-align: start;
+    }
+
+    th {
+        font-weight: var(--asona--font-weight--base-bold);
+    }
+
+    thead th,
+    thead td {
+        border-block-end: 2px solid var(--asona--color--border);
+        border-block-start: 0;
+        vertical-align: bottom;
+    }
+
+    tbody tr:first-child td,
+    tbody tr:first-child th {
+        border: 0;
+    }
+
+    tbody th,
+    tbody td {
+        vertical-align: top;
+    }
+
+    tr > td:first-child,
+    tr > th:first-child {
+        padding-inline-start: 0;
+    }
+
+    tr > td:last-child,
+    tr > th:last-child {
+        padding-inline-end: 0;
+    }
+}

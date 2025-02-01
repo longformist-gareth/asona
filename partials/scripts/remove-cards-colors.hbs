@@ -1,0 +1,43 @@
+<script>
+    // Why does the Ghost team hardcode colors instead of adding classes for light and dark?
+    document.querySelectorAll('.kg-header-card.kg-v2, .kg-signup-card').forEach(el => {
+        const bgColor = window.getComputedStyle(el).getPropertyValue('background-color')
+        if (bgColor === 'rgb(240, 240, 240)' || bgColor === 'rgb(0, 0, 0)') {
+            const style = bgColor === 'rgb(240, 240, 240)' ? 'light' : 'dark'
+            el.classList.add(`kg-style-${style}`)
+            el.style.removeProperty('background-color')
+        } else if (!el.classList.contains('kg-style-accent')){
+            const color = window.getComputedStyle(el.querySelector('h2')).getPropertyValue('color')
+            const style = color === 'rgb(255, 255, 255)' ? 'dark' : 'light'
+            el.classList.add(`kg-style-${style}`)
+            el.classList.add('kg-style-custom')
+        }
+
+        if (el.querySelector('img') && !el.classList.contains('kg-layout-split')) {
+            el.classList.add('kg-style-image')
+        }
+
+        el.querySelectorAll('h1, h2, h3, h4, h5, h6, p, .kg-signup-card-success, .kg-signup-card-error').forEach(contentEl => {
+            contentEl.style.removeProperty('color')
+        })
+
+        el.querySelectorAll('.kg-header-card-button, .kg-signup-card-button').forEach(button => {
+            const bgColor = button.style.backgroundColor
+            button.style.transition = 'none'
+            if (button.classList.contains('kg-style-accent')) {
+                button.style.removeProperty('color')
+            } else if (bgColor === '' || bgColor === 'rgb(255, 255, 255)' || bgColor === 'rgb(0, 0, 0)') {
+                const style = bgColor === 'rgb(255, 255, 255)' ? 'light' : 'dark'
+                button.classList.add(`kg-style-${style}`)
+
+                button.style.removeProperty('color')
+                button.style.removeProperty('background-color')
+            } else {
+                button.classList.add('kg-style-custom')
+            }
+            setTimeout(() => {
+                button.style.transition = ''
+            }, 10)
+        })
+    })
+</script>

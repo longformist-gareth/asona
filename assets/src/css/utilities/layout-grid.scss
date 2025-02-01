@@ -1,0 +1,28 @@
+.grid {
+    column-gap: var(--asona--space--column);
+    display: grid;
+    grid-template-columns: repeat(var(--asona--grid--columns, 1), minmax(0, 1fr));
+    row-gap: var(--asona--space--row);
+}
+
+[data-layout-grid] {
+    @include layout-grid;
+}
+
+[data-layout-grid=auto] {
+    grid-template-columns: repeat(auto-fit, minmax(clamp(12rem, 10vw, 20rem), minmax(0, 1fr)));
+}
+
+[data-layout-grid=columns] {
+    grid-template-columns: repeat(var(--asona--grid--columns, 1), minmax(0, 1fr));
+}
+
+[data-layout-grid=sidebar] {
+    @media (min-width: #{px-to-em(1000px)}) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        > *:first-child {
+            grid-column: 1 / span 2;
+        }
+    }
+}

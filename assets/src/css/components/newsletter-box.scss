@@ -1,0 +1,81 @@
+.newsletter-box {
+    @extend [data-theme];
+    @extend [data-theme=highlight];
+    border-radius: var(--asona--radius--m);
+    padding: var(--asona--space--card);
+
+    > * + * {
+        margin-block-start: var(--asona--space--xs);
+    }
+
+    &__info,
+    [data-message] {
+        font-size: var(--asona--font-size--xs);
+    }
+
+    [data-message] {
+        background-color: var(--asona--color--base);
+        border-radius: var(--asona--radius--s);
+        color: var(--asona--color--contrast);
+        display: none;
+        font-size: var(--asona--font-size--2xs);
+        font-weight: var(--asona--font-weight--elements);
+        padding-block-end: var(--asona--space--2xs);
+        padding-block-start: var(--asona--space--2xs);
+        padding-inline-end: var(--asona--space--xs);
+        padding-inline-start: var(--asona--space--xs);
+    }
+
+    &__form {
+        --asona--flow--content: var(--asona--space--xs);
+        background: transparent;
+        border-radius: var(--asona--radius--s);
+        position: relative;
+
+        &.loading [data-message=loading] {
+            --asona--color--base: var(--asona--color--secondary);
+            --asona--color--contrast: var(--asona--color--secondary-contrast);
+            display: inline-block;
+        }
+
+        &.error [data-message=error] {
+            --asona--color--base: var(--asona--color--error);
+            --asona--color--contrast: var(--asona--color--error-contrast);
+            display: inline-block;
+        }
+
+        &.success [data-message=success] {
+            --asona--color--base: var(--asona--color--success);
+            --asona--color--contrast: var(--asona--color--success-contrast);
+            display: inline-block;
+        }
+    }
+
+    &__form-field {
+        background-color: var(--asona--color--base);
+        border: 1px solid var(--asona--color--border);
+        border-radius: var(--asona--radius--2xl);
+        display: flex;
+        padding: var(--asona--space--3xs);
+        position: relative;
+        transition: border 0.2s;
+
+        &:focus-within {
+            border-color: var(--asona--color--border-highlight);
+        }
+
+        input {
+            background: transparent;
+            border: 0;
+            padding-block-end: 0;
+            padding-block-start: 0;
+            padding-inline-end: var(--asona--space--s);
+            padding-inline-start: calc(var(--asona--space--s) + var(--asona--space--3xs));
+        }
+    }
+
+    &__form-submit {
+        @extend [data-btn-size=small];
+        font-size: var(--asona--font-size--elements);
+    }
+}

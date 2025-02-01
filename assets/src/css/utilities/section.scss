@@ -1,0 +1,21 @@
+.section {
+    margin-block-end: var(--asona--space--section);
+    margin-block-start: var(--asona--space--section);
+    position: relative;
+
+    &:where([data-theme]) {
+        margin-block-end: 0;
+        margin-block-start: 0;
+        padding-block-end: var(--asona--space--section);
+        padding-block-start: var(--asona--space--section);
+    }
+
+    &[data-section=first] {
+        margin-block-start: var(--asona--space--section-first);
+
+        &:where([data-theme]) {
+            margin-block-start: 0;
+            padding-block-start: var(--asona--space--section-first);
+        }
+    }
+}

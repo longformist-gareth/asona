@@ -1,0 +1,12 @@
+.section-title,
+.meta-title {
+    color: var(--asona--color--contrast-highlight);
+    font-size: var(--asona--font-size--xs);
+    font-weight: var(--asona--font-weight--headings-small);
+    margin-block-end: var(--asona--space--s);
+    text-transform: uppercase;
+}
+
+.section-title {
+    margin-block-end: var(--asona--space--m);
+}

@@ -1,0 +1,46 @@
+.site-navigation {
+    block-size: 100%;
+    z-index: 1;
+
+    @media (max-width: #{px-to-em(999px)}) {
+        block-size: auto;
+        flex-direction: column;
+        inset-block-start: 100%;
+        inset-inline-start: 0;
+        max-block-size: calc(var(--asona--dvh, 100vh) - var(--asona--site-header--offset) - var(--asona--size--header));
+        overflow: auto;
+        position: absolute;
+        transition: visibility 0.2s;
+        visibility: hidden;
+        width: 100%;
+
+        .site-header[data-state] & {
+            visibility: visible;
+        }
+    }
+
+    &__inner {
+        block-size: 100%;
+        display: flex;
+        gap: var(--asona--space--2xs);
+
+        @media (max-width: #{px-to-em(999px)}) {
+            flex-direction: column;
+            opacity: 0;
+            transform: translate3d(0, -10px, 0);
+            transition: background .2s .2s, transform 0.2s, opacity 0.2s, visibility 0.2s;
+            visibility: hidden;
+
+            .site-header[data-state=navigation-open] & {
+                background-color: var(--asona--color--base);
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+                visibility: visible;
+            }
+
+            > *:last-child {
+                padding-block-end: max(var(--asona--space--s), var(--asona--safe-area--bottom));
+            }
+        }
+    }
+}

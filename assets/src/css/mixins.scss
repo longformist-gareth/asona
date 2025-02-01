@@ -1,0 +1,80 @@
+@use 'sass:math';
+
+$default-min-bp: 390px;
+$default-max-bp: 1156px;
+
+@function round-decimals($number, $decimals: 0) {
+    $n: 1;
+    @if $decimals > 0 {
+        @for $i from 1 through $decimals {
+            $n: $n * 10;
+        }
+    }
+    @return math.div(math.round($number * $n), $n);
+}
+
+@function px-to-em($px) {
+    $rems: math.div($px, 16px) * 1em;
+    @return $rems;
+}
+
+@function px-to-rem($px) {
+    $rems: math.div($px, 16px) * 1rem;
+    @return $rems;
+}
+
+@function fluid-size($min-size, $max-size, $min-breakpoint: $default-min-bp, $max-breakpoint: $default-max-bp, $unit: vw) {
+    $slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
+    $slope-to-unit: round-decimals($slope * 100, 4);
+    $intercept-rem: round-decimals(px-to-rem($min-size - $slope * $min-breakpoint), 4);
+    $min-size-rem: round-decimals(px-to-rem($min-size), 4);
+    $max-size-rem: round-decimals(px-to-rem($max-size), 4);
+    @return clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
+}
+
+@mixin canvas-grid($column: content-start/content-end) {
+    --asona--canvas--container-max-width: calc((var(--asona--size--container) - var(--asona--size--content-wide))/2);
+    --asona--canvas--wide-max-width: calc((var(--asona--size--content-wide) - var(--asona--size--content))/2);
+    --asona--canvas--wide-calc: max(0px, calc(100% - var(--asona--size--content) - var(--asona--canvas--wide-max-width) - calc(var(--asona--space--site) * 2)));
+    --asona--canvas--container-calc: max(0px, calc(calc(100% - var(--asona--size--content) - calc(var(--asona--space--site) * 2)) / 2));
+
+    display: grid;
+    grid-template-columns:
+        [start]
+        var(--asona--space--site-align-full)
+        [full-start]
+        minmax(calc(var(--asona--space--site) - var(--asona--space--site-align-full)), 1fr)
+        [container-start]
+        minmax(0, var(--asona--canvas--container-max-width))
+        [wide-start]
+        minmax(min(var(--asona--canvas--wide-max-width), max(var(--asona--canvas--wide-calc), var(--asona--canvas--container-calc))), var(--asona--canvas--wide-max-width))
+        [content-start]
+        min(var(--asona--size--content), calc(100% - var(--asona--space--site) * 2))
+        [content-end]
+        minmax(min(var(--asona--canvas--wide-max-width), max(var(--asona--canvas--wide-calc), var(--asona--canvas--container-calc))), var(--asona--canvas--wide-max-width))
+        [wide-end]
+        minmax(0, var(--asona--canvas--container-max-width))
+        [container-end]
+        minmax(calc(var(--asona--space--site) - var(--asona--space--site-align-full)), 1fr)
+        [full-end]
+        var(--asona--space--site-align-full)
+        [end];
+    grid-template-rows: auto;
+
+    > * {
+        grid-column: $column;
+    }
+}
+
+@mixin layout-grid {
+    column-gap: var(--asona--space--column);
+    display: grid;
+    padding-inline-end: max(var(--asona--space--site), calc((100% - var(--asona--size--container))/2));
+    padding-inline-start: max(var(--asona--space--site), calc((100% - var(--asona--size--container))/2));
+    row-gap: var(--asona--space--row);
+
+    :where([data-layout-grid]) & {
+        padding-inline-end: 0;
+        padding-inline-start: 0;
+    }
+}

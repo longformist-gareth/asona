@@ -1,0 +1,223 @@
+.kg-header-card.kg-v2 {
+    $self: '.kg-header-card';
+    @extend %flow-xlarge;
+    @extend [data-theme];
+
+    border-radius: var(--asona--radius--m);
+    inline-size: 100%;
+    overflow: hidden;
+    position: relative;
+
+    picture {
+        &::after {
+            background: var(--asona--color--overlay-image);
+            content: '';
+            display: block;
+            inset: 0;
+            position: absolute;
+        }
+    }
+
+    #{$self}-image {
+        block-size: 100%;
+        inline-size: 100%;
+        inset: 0;
+        object-fit: cover;
+        position: absolute;
+    }
+
+    #{$self}-content {
+        grid-column: start / end;
+    }
+
+    #{$self}-text {
+        @include canvas-grid;
+        justify-items: start;
+        background-position: center;
+        background-size: cover;
+        padding-block-end: max(14vmin, var(--asona--space--section));
+        padding-block-start: max(14vmin, var(--asona--space--section));
+        position: relative;
+
+        > * {
+            grid-column: content-start / content-end;
+        }
+
+        > * + * {
+            margin-block-end: 0;
+            margin-block-start: var(--asona--flow--content);
+        }
+
+        &.kg-align-center {
+            justify-items: center;
+            text-align: center;
+        }
+    }
+
+    #{$self}-heading {
+        font-size: var(--asona--font-size--3xl);
+        font-weight: var(--asona--font-weight--headings);
+        line-height: 1.35;
+    }
+
+    #{$self}-subheading {
+        color: var(--asona--color--contrast);
+        font-family: var(--asona--font-family--base);
+        font-size: var(--asona--font-size--m);
+        font-weight: var(--asona--font-weight--base);
+        line-height: 1.4;
+
+        strong {
+            font-weight: var(--asona--font-weight--base-bold);
+        }
+
+        a {
+            padding-block-end: 0;
+        }
+    }
+
+    #{$self}-button {
+        @extend .button;
+        border: 0;
+
+        &.kg-style-accent {
+            background-color: var(--asona--color--accent);
+        }
+    }
+
+    &.kg-style-light {
+        @extend [data-theme=highlight];
+    }
+
+    &.kg-style-dark {
+        @extend [data-theme=dark];
+    }
+
+    &.kg-style-accent {
+        @extend [data-theme=accent];
+    }
+
+    &.kg-width-wide,
+    &.kg-width-full {
+        grid-column: full-start / full-end;
+    }
+
+    &.kg-width-wide {
+        [data-canvas-grid] > & {
+            @media (min-width: #{px-to-em(820px)}) {
+                grid-column: wide-start / wide-end;
+            }
+        }
+
+        #{$self}-heading {
+            font-size: var(--asona--font-size--4xl);
+        }
+
+        #{$self}-subheading {
+            font-size: var(--asona--font-size--l);
+        }
+    }
+
+    &.kg-width-full {
+        #{$self}-text {
+            padding-block-end: max(18vmin, var(--asona--space--section));
+            padding-block-start: max(18vmin, var(--asona--space--section));
+        }
+
+        .kg-align-center #{$self}-heading {
+            grid-column: wide-start/wide-end;
+        }
+
+        &:not(.kg-layout-split) {
+            #{$self}-text {
+                @media (min-width: #{px-to-em(700px)}) {
+                    > * + * {
+                        --asona--flow--content: var(--asona--flow--l);
+                    }
+                }
+            }
+
+            #{$self}-heading {
+                font-size: var(--asona--font-size--5xl);
+                line-height: 1.2;
+            }
+
+            #{$self}-subheading {
+                font-size: var(--asona--font-size--xl);
+            }
+
+            #{$self}-button {
+                @extend [data-btn-size=big];
+            }
+        }
+    }
+
+    &.kg-layout-split {
+        #{$self}-content {
+            display: grid;
+            grid-column: container-start/container-end;
+        }
+
+        #{$self}-text {
+            > * {
+                grid-column: start / end;
+            }
+        }
+
+        picture {
+            block-size: 40vmin;
+            margin-inline-end: calc(-1 * var(--asona--space--site));
+            margin-inline-start: calc(-1 * var(--asona--space--site));
+            max-inline-size: none;
+            order: 2;
+            position: relative;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        #{$self}-heading {
+            font-size: var(--asona--font-size--4xl);
+        }
+
+        #{$self}-subheading {
+            font-size: var(--asona--font-size--l);
+        }
+
+        @media (min-width: #{px-to-em(820px)}) {
+            #{$self}-content {
+                display: grid;
+                gap: var(--asona--space--site);
+                grid-column: container-start/container-end;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #{$self}-text {
+                grid-column: 2 / 3;
+                padding-inline-start: calc(var(--asona--space--site) / 2);
+            }
+
+            picture {
+                position: absolute;
+                block-size: 100%;
+                inline-size: 50%;
+                margin: 0;
+                inset-inline-start: 0;
+            }
+
+            &.kg-swapped {
+                #{$self}-text {
+                    grid-column: 1 / 2;
+                    padding-inline-end: calc(var(--asona--space--site) / 2);
+                    padding-inline-start: 0;
+                }
+
+                picture {
+                    inset-inline-end: 0;
+                    inset-inline-start: auto;
+                }
+            }
+        }
+    }
+}

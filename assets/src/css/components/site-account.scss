@@ -1,0 +1,27 @@
+.site-account {
+    block-size: 100%;
+    border-block-start: 1px solid var(--asona--color--border-dim);
+    display: flex;
+    font-family: var(--asona--font-family--elements);
+    font-size: var(--asona--font-size--xs);
+    font-weight: var(--asona--font-weight--elements);
+    justify-content: space-between;
+    padding-block-start: var(--asona--space--s);
+    padding-inline-end: var(--asona--space--site);
+    padding-inline-start: calc(var(--asona--space--site) - var(--asona--space--xs));
+
+    @media (min-width: #{px-to-em(1000px)}) {
+        border: 0;
+        padding: 0;
+    }
+
+    &__link {
+        align-items: center;
+        display: flex;
+        padding: var(--asona--space--xs);
+    }
+
+    &__button {
+        align-self: center;
+    }
+}

@@ -1,0 +1,18 @@
+{{!< default}}
+
+{{#post}}
+
+{{!-- Add cucstom class to the body. --}}
+{{#contentFor 'body_class'}} page-template-no-heading{{/contentFor}}
+
+<article class="article {{post_class}}" data-page-title="false">
+
+    <div class="article-main section" data-canvas-grid="content">
+        <div class="article-content" data-canvas-grid="content" data-canvas-grid-self="full">
+            {{content}}
+        </div>
+    </div>
+
+</article>
+
+{{/post}}

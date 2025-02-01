@@ -1,0 +1,260 @@
+.asona-comments-iframe {
+    font-size: inherit;
+
+    body {
+        @extend %body-small-text;
+    }
+
+    .ghost-display {
+        padding: 0 !important;
+    }
+
+    :where([class*=font-]) {
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        font-style: inherit;
+        text-transform: inherit;
+    }
+
+    :where([class*=tracking-]) {
+        letter-spacing: inherit;
+    }
+
+    :where([class*=text-]) {
+        font-size: inherit;
+    }
+
+    :where([class*=border-]) {
+        border-color: var(--asona--color--border-dim);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @extend %headings;
+    }
+
+    h1 {
+        @extend %heading-2;
+    }
+
+    h2 {
+        @extend .section-title;
+        margin-block-end: 0;
+
+        * {
+            text-transform: inherit;
+        }
+    }
+
+    .font-semibold {
+        font-weight: var(--asona--font-weight--elements);
+    }
+
+    .text-\[14px\] {
+        font-size: var(--asona--font-size--xs);
+        color: var(--asona--color--contrast-dimmer);
+    }
+
+    .text-\[rgba\(0\2c 0\2c 0\2c 0\.5\)\] {
+        color: var(--asona--color--contrast-dim);
+    }
+
+    .text-\[rgba\(0\2c 0\2c 0\2c 0\.2\)\] {
+        color: var(--asona--color--contrast-dimmer);
+    }
+
+    .text-white:where(:not(button)) {
+        color: #fff;
+    }
+
+    .shadow-lg, .shadow-modal {
+        box-shadow: 0 4px 12px 0 var(--asona--color--shadow-highlight);
+    }
+
+    .shadow-form {
+        border-radius: var(--asona--radius--2xl);
+        box-shadow: 0 0 0 1px var(--asona--color--border);
+        padding-block-end: var(--asona--space--s);
+        padding-block-start: var(--asona--space--s);
+        padding-inline-end: var(--asona--space--m);
+        padding-inline-start: var(--asona--space--m);
+        transition-delay: 0s;
+    }
+
+    .gh-comment-content {
+        p:not(:last-child) {
+            margin-block-end: var(--asona--space--s);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--asona--color--link);
+        }
+    }
+
+    [data-placeholder] {
+        &::before {
+            color: var(--asona--color--contrast-dimmer) !important;
+        }
+    }
+
+    [data-testid=pagination-component] {
+        @extend .button;
+        @extend [data-btn-size=small];
+        @extend [data-btn-variant=ghost];
+
+        span {
+            all: unset;
+        }
+    }
+
+    [data-testid=like-button],
+    [data-testid=reply-button],
+    [data-testid=more-button] {
+        color: var(--asona--color--contrast-dimmer);
+        font-size: var(--asona--font-size--3xs);
+        font-weight: var(--asona--font-weight--elements);
+    }
+
+    [data-testid=like-button] {
+        :where([class*='fill-']) {
+            fill: var(--asona--color--primary);
+            stroke: var(--asona--color--primary);
+        }
+    }
+
+    [data-testid=submit-form-button] {
+        @extend .button;
+        @extend [data-btn-size=small];
+
+        svg {
+            fill: currentColor;
+        }
+    }
+
+    section {
+        section {
+            &[class*=border-] {
+                border-block-end: 0;
+            }
+
+            &[class*=pb-] {
+                padding-block-end: 0;
+            }
+        }
+
+        > button:not([data-testid]) {
+            @extend .button;
+            @extend [data-btn-size=small];
+
+            background-color: var(--asona--color--primary) !important;
+
+            &:hover {
+                background-color: transparent !important;
+                color: var(--asona--color--primary);
+            }
+        }
+
+        > button[data-testid=signup-button] {
+            @extend .button;
+            @extend [data-btn-size=small];
+
+            &:hover {
+                background-color: transparent !important;
+                color: var(--asona--color--primary) !important;
+            }
+        }
+
+        > p button {
+            border-block-end: 2px solid var(--asona--color--border-dim);
+            border-radius: 0;
+            color: var(--asona--color--link) !important;
+            font-weight: var(--asona--font-weight--elements);
+            transition: color 0.2s, background-color 0.2s;
+
+            &:hover {
+                background-color: var(--asona--color--link--hover);
+                color: var(--asona--color--link--hover-contrast) !important;
+            }
+        }
+    }
+
+    .gap-5 {
+        gap: var(--asona--space--s);
+    }
+
+    .w-9 {
+        inline-size: #{px-to-rem(40px)};
+    }
+
+    .h-9 {
+        block-size: #{px-to-rem(40px)};
+    }
+
+    .h-12 {
+        block-size: #{px-to-rem(40px)};
+    }
+
+    .mr-3 {
+        margin-inline-end: var(--asona--space--xs);
+    }
+
+    .mb-3 {
+        margin-block-end: var(--asona--space--xs);
+    }
+
+    .mb-8 {
+        margin-block-end: var(--asona--space--row);
+    }
+
+    .mb-10 {
+        margin-block-end: var(--asona--space--row);
+    }
+
+    .mt-10 {
+        margin-block-start: var(--asona--space--row);
+    }
+
+    .pl-\[52px\] {
+        padding-inline-start: var(--asona--space--l);
+    }
+
+    .pb-\[48px\] {
+        padding-block-end: var(--asona--space--row);
+    }
+
+    .pt-\[40px\] {
+        padding-block-start: var(--asona--space--row);
+    }
+
+    .dark {
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--asona--color--contrast-highlight) !important;
+        }
+
+        [class*="dark\:text-"] {
+            color: var(--asona--color--contrast);
+        }
+
+        .text-\[14px\],
+        .text-\[rgba\(0\2c 0\2c 0\2c 0\.2\)\] {
+            color: var(--asona--color--contrast-dimmer);
+        }
+
+        .text-\[rgba\(0\2c 0\2c 0\2c 0\.5\)\] {
+            color: var(--asona--color--contrast-dim);
+        }
+
+        [class*=bg-]:not(button) {
+            background-color: var(--asona--color--base);
+        }
+
+        [class*=border-] {
+            border-color: var(--asona--color--border-dim);
+        }
+
+        .shadow-form {
+            background-color: #1d1c22 !important;
+        }
+    }
+}

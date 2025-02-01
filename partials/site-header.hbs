@@ -1,0 +1,83 @@
+<header id="site-header" class="site-header">
+    <div class="site-header__container">
+        <button
+            class="site-header__hamburger"
+            data-site-action-trigger="navigation"
+            aria-label="{{t 'Open Menu'}}"
+            aria-expanded="false"
+            aria-controls="site-navigation">
+            <span></span>
+        </button>
+
+        <a href="{{@site.url}}" rel="home" class="site-header__logo"{{#if @custom.dark_mode_logo}} data-has-dark-mode-logo{{/if}}>
+            {{#if @site.logo}}
+                <img class="site-header__logo-image" data-logo-color-scheme="default" src="{{@site.logo}}" alt="{{@site.title}}">
+                {{#if @custom.dark_mode_logo}}
+                    <img class="site-header__logo-image" data-logo-color-scheme="dark" src="{{@custom.dark_mode_logo}}" alt="{{@site.title}}">
+                {{/if}}
+            {{else}}
+                {{@site.title}}
+            {{/if}}
+        </a>
+
+        <div id="site-navigation" class="site-navigation">
+            <div class="site-navigation__inner">
+                {{navigation}}
+
+                {{#if @site.members_enabled}}
+                    <div class="site-account">
+                        {{#if @member}}
+                            <a class="site-account__button button" data-btn-size="small" data-btn-variant="ghost" href="#/portal/account" data-portal="account">
+                                {{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}
+                            </a>
+                        {{else}}
+                            {{#if @site.members_invite_only}}
+                                <a class="site-account__button button" data-btn-size="small" data-btn-variant="ghost" href="#/portal/signin" data-portal="signin">{{t 'Sign in'}}</a>
+                            {{else}}
+                                <a class="site-account__link" href="#/portal/signin" data-portal="signin">{{t 'Sign in'}}</a>
+                                <a class="site-account__button button" data-btn-size="small" href="#/portal/signup" data-portal="signup">{{t 'Subscribe'}}</a>
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                {{/if}}
+
+                {{#match @custom.dark_mode '=' 'Switcher'}}
+                    <div class="site-color-scheme">
+                        <div class="site-color-scheme__current">
+                            <span class="site-color-scheme__icon" data-show-color-scheme="light">{{> 'icons/sun'}}</span>
+                            <span class="site-color-scheme__icon" data-show-color-scheme="dark">{{> 'icons/moon'}}</span>
+                            <span class="site-color-scheme__icon" data-show-color-scheme="system">{{> 'icons/color-adjust'}}</span>
+                        </div>
+                        <div class="site-color-scheme__options">
+                            <button class="site-color-scheme__item" data-toggle-color-scheme="light">
+                                <span class="site-color-scheme__icon">{{> 'icons/sun'}}</span>
+                                <span class="site-color-scheme__label">{{t 'Light'}}</span>
+                            </button>
+                            <button class="site-color-scheme__item" data-toggle-color-scheme="dark">
+                                <span class="site-color-scheme__icon">{{> 'icons/moon'}}</span>
+                                <span class="site-color-scheme__label">{{t 'Dark'}}</span>
+                            </button>
+                            <button class="site-color-scheme__item" data-toggle-color-scheme="system">
+                                <span class="site-color-scheme__icon">{{> 'icons/color-adjust'}}</span>
+                                <span class="site-color-scheme__label">{{t 'System'}}</span>
+                            </button>
+                        </div>
+                    </div>
+                {{/match}}
+            </div>
+        </div>
+
+        <button
+            class="site-header__search-trigger"
+            aria-label="{{t 'Open Search'}}"
+            data-ghost-search>
+            <span></span>
+        </button>
+    </div>
+
+    <div class="site-actions">
+        <span class="site-actions__backdrop" data-close-site-actions></span>
+        <span class="site-actions__bg"></span>
+    </div>
+
+</header>

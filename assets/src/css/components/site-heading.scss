@@ -1,0 +1,83 @@
+.site-heading {
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: var(--asona--space--s);
+    padding-block-start: var(--asona--space--section);
+
+    @media (min-width: #{px-to-em(500px)}) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__figure {
+        background: var(--asona--color--border);
+        border-radius: 50%;
+        display: block;
+        flex: 1 0 auto;
+        inline-size: 100%;
+        max-inline-size: #{fluid-size(60px, 96px)};
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    &__content {
+        flex: 1 1 auto;
+    }
+
+    &__image {
+        aspect-ratio: 1/1;
+        inline-size: 100%;
+        object-fit: cover;
+    }
+
+    &__title {
+        margin-block-end: 0.5rem;
+    }
+
+    &__description {
+        margin-block-start: 0.5rem;
+    }
+
+    &__meta {
+        display: flex;
+        margin-block-start: var(--asona--space--xs);
+        margin-inline-start: -0.5rem;
+
+        &-item {
+            align-items: center;
+            color: var(--asona--color--contrast-dim);
+            display: inline-flex;
+            font-family: var(--asona--font-family--elements);
+            font-size: var(--asona--font-size--3xs);
+            font-weight: var(--asona--font-weight--elements);
+            gap: 0.25rem;
+            letter-spacing: 0.015625rem;
+            line-height: 1;
+            padding: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        svg {
+            block-size: #{px-to-rem(20px)};
+            inline-size: #{px-to-rem(20px)};
+        }
+    }
+
+    &__info {
+        color: var(--asona--color--contrast);
+        font-weight: var(--asona--font-weight--base);
+
+        @media (min-width: #{px-to-em(500px)}) {
+            text-align: center;
+
+            span {
+                display: block;
+                font-size: var(--asona--font-size--h1);
+                font-weight: var(--asona--font-weight--headings);
+                line-height: 1.1;
+                margin-block-end: 0.5rem;
+            }
+        }
+    }
+}

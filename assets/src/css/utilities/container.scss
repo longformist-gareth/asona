@@ -1,0 +1,7 @@
+.container {
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+    max-width: calc(var(--asona--size--container) + var(--asona--space--site) * 2);
+    padding-inline-end: var(--asona--space--site);
+    padding-inline-start: var(--asona--space--site);
+}

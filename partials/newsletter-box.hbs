@@ -1,0 +1,14 @@
+<div class="newsletter-box">
+    <h3 class="newsletter-box__title meta-title">{{t 'Stay in the loop'}}</h3>
+    <p class="newsletter-box__info">{{@custom.newsletter_text}}</p>
+    <form class="newsletter-box__form" data-members-form="signup" data-theme="reset">
+        <div class="newsletter-box__form-field">
+            <label for="newsletter-box-email-input" class="visually-hidden">{{t 'Enter your email'}}</label>
+            <input id="newsletter-box-email-input" class="newsletter-box__form-input" type="email" name="email" placeholder="{{t 'Enter your email'}}" required data-members-email>
+            <button class="newsletter-box__form-submit" type="submit">{{t 'Subscribe'}}</button>
+        </div>
+        <p class="newsletter-box__message" data-message="loading">{{t 'Processing your application...'}}</p>
+        <p class="newsletter-box__message" data-message="success">{{t 'Success! Please check your inbox and click the link to confirm your subscription.'}}</p>
+        <p class="newsletter-box__message" data-message="error">{{t 'Sorry, something went wrong. Please try again.'}}</p>
+    </form>
+</div>

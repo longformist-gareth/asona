@@ -1,0 +1,93 @@
+.article {
+    > * + * {
+        margin-block-start: var(--asona--space--section);
+    }
+
+    &-header[data-has-featured-image=false] + * {
+        margin-block-start: var(--asona--flow--content);
+    }
+
+    &-main {
+        > * + * {
+            margin-block-start: var(--asona--space--l);;
+        }
+    }
+
+    &-content {
+        align-self: start;
+        grid-row: 1/2;
+        word-wrap: break-word;
+
+        > * + * {
+            margin-block-start: var(--asona--flow--content);
+        }
+
+        [data-page-title=false] & {
+            > :first-child:is(.kg-width-wide, .kg-header-card.kg-size-medium) {
+                margin-block-start: calc(-1 * var(--asona--space--section) + var(--asona--space--m));
+            }
+
+            > :first-child:is(.kg-header-card.kg-size-large, .kg-header-card.kg-width-full, .kg-signup-card.kg-width-full, .kg-image-card.kg-width-full, .kg-video-card.kg-width-full) {
+                margin-block-start: calc(-1 * var(--asona--space--section) + var(--asona--space--2xs));
+            }
+        }
+
+        > :last-child:is(.kg-header-card.kg-size-large, .kg-header-card.kg-width-full, .kg-signup-card.kg-width-full, .kg-image-card.kg-width-full, .kg-video-card.kg-width-full) {
+            .page-template & {
+                margin-block-end: calc(-1 * var(--asona--space--section) + var(--asona--space--2xs));
+            }
+        }
+
+        .kg-width-full:not(.kg-card-hascaption) + .kg-width-full:not(.kg-header-card.kg-size-small):not(.kg-header-card.kg-size-medium) {
+            margin-block-start: var(--asona--flow--s);
+        }
+    }
+
+    &-authors {
+        > * + * {
+            margin-block-start: var(--asona--space--m);
+        }
+    }
+
+    &-sharing {
+        @media (min-width: #{px-to-em(1200px)}) {
+            align-self: start;
+            grid-column: container-start/wide-start;
+            grid-row: 1/2;
+            justify-self: end;
+            margin-block-start: 0;
+            margin-block-start: calc(-1 * var(--asona--space--s) / 2);
+            position: sticky;
+            top: var(--asona--space--sticky);
+            width: 80px;
+            z-index: 1;
+
+            .sharing-buttons {
+                &__title {
+                    display: none;
+                }
+
+                &__list {
+                    flex-direction: column;
+                    gap: 0;
+                }
+
+                &__list-link {
+                    background: transparent;
+                    color: var(--asona--color--border);
+                    outline-offset: -4px;
+                    padding: var(--asona--space--s);
+
+                    svg {
+                        height: 1.5rem;
+                        width: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &-footer {
+        margin-block-start: calc(var(--asona--space--section) * 2);
+    }
+}

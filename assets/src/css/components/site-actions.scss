@@ -1,0 +1,53 @@
+.site-actions {
+    // calc() doesn't work with 0
+    // stylelint-disable-next-line length-zero-no-unit
+    --asona--site-actions--height: 0px;
+
+    height: calc(var(--asona--dvh, 100vh) - var(--asona--site-header--offset));
+    left: 0;
+    padding-top: var(--asona--size--header);
+    position: absolute;
+    top: 0;
+    transition: visibility 0.2s;
+    visibility: hidden;
+    width: 100%;
+
+    .site-header[data-state] & {
+        visibility: visible;
+    }
+
+    @media (min-width: #{px-to-em(1000px)}) {
+        display: none;
+    }
+
+    &__bg,
+    &__backdrop {
+        height: 100vh;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    &__backdrop {
+        background: var(--asona--color--overlay-backdrop);
+        opacity: 0;
+        transition: opacity 0.2s, visibility 0.2s;
+        visibility: hidden;
+
+        .site-header[data-state] & {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__bg {
+        background: var(--asona--color--base);
+        max-height: 0;
+        transition: max-height 0.3s;
+
+        .site-header[data-state] & {
+            max-height: calc(var(--asona--site-actions--height) + var(--asona--size--header) - var(--asona--safe-area--bottom));
+        }
+    }
+}

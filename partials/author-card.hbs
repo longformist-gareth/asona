@@ -1,0 +1,40 @@
+<article class="tax-card" data-layout="{{layout}}" data-has-featured-image="{{#if profile_image}}true{{else}}false{{/if}}">
+
+    {{#if profile_image}}
+    <a href="{{url}}" class="tax-card__media" tabindex="-1">
+        {{!-- We need to use picture tag as Safari doesn't load the correct image size
+        with ajax (Load More) when using srcset inside img tag --}}
+        <picture class="tax-card__figure">
+            <source
+                srcset="{{> 'helpers/image-srcset' feature_image=profile_image format='webp'}}"
+                sizes="{{~> 'helpers/image-sizes' feature_image=profile_image image_sizes=image_sizes}}">
+            <img class="tax-card__image"
+                width="5" height="3"
+                src="{{img_url profile_image size='760' format='webp'}}"
+                loading="{{#if loading}}{{loading}}{{else}}lazy{{/if}}"
+                alt="{{name}}"
+                onload="this.setAttribute('data-loaded', true)"
+            />
+        </picture>
+    </a>
+    {{/if}}
+
+    <div class="tax-card__content">
+        <a href="{{url}}" class="tax-card__content-link">
+            <h2 class="tax-card__title">
+                <span class="tax-card__title-inner">{{name}}</span>
+            </h2>
+            {{#if bio}}
+            <p class="tax-card__excerpt">{{bio}}</p>
+            {{/if}}
+        </a>
+        <div class="tax-card__footer">
+            {{#if count.posts}}
+            <span class="tax-card__meta tax-card__meta--count-posts">
+                {{plural count.posts empty=(t '<span>0</span> Articles') singular=(t '<span>%</span> Article') plural=(t '<span>%</span> Articles')}}
+            </span>
+            {{/if}}
+        </div>
+    </div>
+
+</article>

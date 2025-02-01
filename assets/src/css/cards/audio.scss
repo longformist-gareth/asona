@@ -1,0 +1,33 @@
+.article-content .kg-audio {
+    &-card {
+        border-radius: var(--asona--radius--s);
+        box-shadow: inset 0 0 0 1px var(--asona--color--border);
+        min-block-size: #{px-to-rem(96px)};
+        overflow: hidden;
+
+    }
+
+    &-thumbnail {
+        inline-size: #{px-to-rem(96px)};
+        margin: 0;
+        min-inline-size: #{px-to-rem(96px)};
+    }
+
+    &-player-container {
+        padding: var(--asona--space--card-small);
+    }
+
+    &-title {
+        color: var(--asona--color--contrast-highlight);
+        font-family: var(--asona--font-family--headings);
+        font-size: var(--asona--font-size--h5);
+        font-weight: var(--asona--font-weight--headings);
+        margin: 0;
+        padding: 0;
+    }
+
+    &-player {
+        margin-block-start: var(--asona--space--xs);
+        padding: 0;
+    }
+}

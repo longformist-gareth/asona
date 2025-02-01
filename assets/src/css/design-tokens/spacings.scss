@@ -1,0 +1,50 @@
+:root {
+    --asona--safe-area--top: env(safe-area-inset-top);
+    --asona--safe-area--right: env(safe-area-inset-right);
+    --asona--safe-area--bottom: env(safe-area-inset-bottom);
+    --asona--safe-area--left: env(safe-area-inset-left);
+
+    --asona--space--3xs: #{px-to-rem(4px)};
+    --asona--space--2xs: #{px-to-rem(8px)};
+    --asona--space--xs: #{px-to-rem(12px)};
+    --asona--space--s: #{px-to-rem(16px)};
+    --asona--space--m: #{px-to-rem(32px)};
+    --asona--space--l: #{px-to-rem(48px)};
+    --asona--space--xl: #{px-to-rem(64px)};
+    --asona--space--2xl: #{px-to-rem(96px)};
+    --asona--space--3xl: #{px-to-rem(128px)};
+
+    --asona--space--3xs-xs: #{fluid-size(4px, 12px)};
+    --asona--space--2xs-xs: #{fluid-size(8px, 12px)};
+    --asona--space--3xs-s: #{fluid-size(4px, 16px)};
+    --asona--space--2xs-s: #{fluid-size(8px, 16px)};
+    --asona--space--xs-s: #{fluid-size(12px, 16px)};
+    --asona--space--xs-m: #{fluid-size(12px, 32px)};
+    --asona--space--s-m: #{fluid-size(16px, 32px)};
+    --asona--space--s-l: #{fluid-size(16px, 48px)};
+    --asona--space--m-l: #{fluid-size(32px, 48px)};
+    --asona--space--m-xl: #{fluid-size(32px, 64px)};
+    --asona--space--l-xl: #{fluid-size(48px, 64px)};
+
+    --asona--flow--xs: #{px-to-rem(8px)};
+    --asona--flow--s: #{px-to-rem(12px)};
+    --asona--flow--m: #{fluid-size(22px, 24px)};
+    --asona--flow--l: #{fluid-size(28px, 32px)};
+    --asona--flow--xl: #{fluid-size(32px, 56px)};
+
+    --asona--flow--content: var(--asona--flow--m);
+
+    --asona--space--site: #{fluid-size(24px, 48px)};
+    --asona--space--site-align-full: var(--asona--space--2xs);
+    --asona--space--sticky: calc(var(--asona--size--header) + var(--asona--space--s));
+    --asona--space--scroll: calc(var(--asona--size--header) + var(--asona--space--section) - 1px);
+    --asona-space--scroll-theme: calc(var(--asona-size--header) - 1px);
+
+    --asona--space--section: var(--asona--space--l-xl);
+    --asona--space--section-first: #{fluid-size(24px, 32px)};
+    --asona--space--column: #{fluid-size(16px, 32px, 1000px, 1280px)};
+    --asona--space--row: var(--asona--space--m-xl);
+
+    --asona--space--card: var(--asona--space--s-m);
+    --asona--space--card-small: var(--asona--space--xs-s);
+}

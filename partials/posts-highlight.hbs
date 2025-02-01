@@ -1,0 +1,20 @@
+<div class="posts-highlight section" data-highlight="{{#match style 'Classic'}}classic{{else}}modern{{/match}}" data-layout-grid="columns" data-section="first">
+    {{!-- custom style param 'style' can't be accessed inside foreach so we have to do it twice --}}
+    {{#match style '=' 'Classic'}}
+        {{#foreach posts limit='4'}}
+            {{#if @first}}
+                {{> 'post-card' layout='highlight' image_sizes='posts-highlight-main' loading='eager' preload_image=true}}
+            {{else}}
+                {{> 'post-card' image_sizes='posts-highlight-grid'}}
+            {{/if}}
+        {{/foreach}}
+    {{else}}
+        {{#foreach posts limit='4'}}
+            {{#if @first}}
+                {{> 'post-card' layout='highlight' image_sizes='posts-highlight-main' loading='eager' preload_image=true}}
+            {{else}}
+                {{> 'post-card' layout='highlight' image_sizes='posts-highlight-main'}}
+            {{/if}}
+        {{/foreach}}
+    {{/match}}
+</div>

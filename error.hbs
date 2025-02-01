@@ -1,0 +1,25 @@
+{{!< default}}
+
+<div class="error-page" data-layout-grid="custom">
+    <h1 class="error-page__code">{{statusCode}}</h1>
+    <h2 class="error-page__title">{{message}}</h2>
+    <a class="error-page__link button" href="{{@site.url}}">{{t 'Go to the homepage'}}</a>
+
+    {{#if errorDetails}}
+    <div class="error-page__stack">
+        <h3 class="error-page__stack-title">{{t 'Errors'}}</h3>
+        <ul class="error-page__stack-list">
+            {{#foreach errorDetails}}
+                <li>
+                    <em class="error-page__stack-function">{{{rule}}}</em>
+                    {{#foreach failures}}
+                        <p><span class="error-page__stack-file">{{t 'Ref'}}: {{ref}}</span></p>
+                        <p><span class="error-page__stack-file">{{t 'Message'}}: {{message}}</span></p>
+                    {{/foreach}}
+                </li>
+            {{/foreach}}
+        </ul>
+    </div>
+    {{/if}}
+</div>
+
