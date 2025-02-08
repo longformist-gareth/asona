@@ -9,6 +9,10 @@ const styles = `
     padding: 1rem;
   }
 
+  .thread-container > .post > div.author, .thread-container > .post > a {
+    display: none;
+  }
+
   .post {
   }
 
