@@ -276,7 +276,9 @@ class BlueSkyFeed extends HTMLElement {
 
       return `
         <div class="post">
-          <div class="author">
+          <h2>Comments</h2>
+          <p><a href="${profileUrl}">Reply on Bluesky</a> to join the conversation.</p>
+          <!-- <div class="author">
             <a href="${profileUrl}" target="_blank" class="author-link">
               ${author.avatar ? `<img src="${author.avatar}" alt="" class="avatar">` : ''}
               <div class="author-info">
@@ -292,7 +294,7 @@ class BlueSkyFeed extends HTMLElement {
               <span>❤️ ${post.post.likeCount || 0}</span>
               <span>🔄 ${post.post.repostCount || 0}</span>
             </div>
-          </a>
+          </a> -->
           ${hasReplies ? `
             <div class="replies">
               ${visibleReplies.map(reply => `
