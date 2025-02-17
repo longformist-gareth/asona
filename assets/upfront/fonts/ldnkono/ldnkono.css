@@ -1,6 +1,6 @@
 @font-face {
  font-family: 'LDN Kono Medium';
- src: url('LDNKono-Medium.woff2') format('woff2'),
+ src: url('LDNKono-Medium.woff2') format('woff2');
  src: url('LDNKono-Medium.woff') format('woff');
  font-weight: normal;
  font-style: normal;
