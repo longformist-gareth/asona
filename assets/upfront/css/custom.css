@@ -2,6 +2,6 @@ body, .asona-comments-iframe h1, .asona-comments-iframe h2, .asona-comments-ifra
 	font-family: 'LDN Kono Medium';
 }
 
-h1, h2 {
+.asona-comments-iframe h1, .asona-comments-iframe h2, .asona-comments-iframe h3, .asona-comments-iframe h4, .asona-comments-iframe h5, .asona-comments-iframe h6, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-weight: bold;
 }
