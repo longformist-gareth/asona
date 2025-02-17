@@ -1,3 +1,7 @@
-body {
+body, h1, h2, h3 {
 	font-family: 'LDN Kono Medium';
+}
+
+h1, h2 {
+	font-weight: bold;
 }
