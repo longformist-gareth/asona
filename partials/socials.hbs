@@ -2,9 +2,7 @@
     {{#if @site.facebook}}
         <a href="{{facebook_url}}" aria-label="{{t 'Follow on {social}' social='Facebook'}}" target="_blank" rel="noopener noreferrer" class="socials__link" data-social="facebook">{{> 'icons/socials/facebook'}}</a>
     {{/if}}
-    {{#if @site.twitter}}
-        <a href="{{twitter_url}}" aria-label="Follow us on BlueSky" target="_blank" rel="noopener noreferrer" class="socials__link" data-social="bluesky"><i class="fa-brands fa-bluesky"></i></a>
-    {{/if}}
+        <a href="https://bsky.app/profile/theupfront.media" aria-label="Follow us on BlueSky" target="_blank" rel="noopener noreferrer" class="socials__link" data-social="bluesky"><i class="fa-brands fa-bluesky"></i></a>
     {{#if @custom.instagram_url}}
         <a href="{{@custom.instagram_url}}" aria-label="{{t 'Follow on {social}' social='Instagram'}}" target="_blank" rel="noopener noreferrer" class="socials__link" data-social="instagram">{{> 'icons/socials/instagram'}}</a>
     {{/if}}
