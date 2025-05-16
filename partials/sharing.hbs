@@ -1,8 +1,15 @@
 <div class="sharing-buttons">
     <h4 class="sharing-buttons__title meta-title">{{t 'Share with friends'}}</h4>
     <ul class="sharing-buttons__list">
+        <!--
         <li class="sharing-buttons__list-item">
             <a href="https://www.facebook.com/sharer.php?u={{url absolute=true}}" title="{{t 'Share on {social}' social='Facebook'}}" target="_blank" rel="noopener" class="sharing-buttons__list-link" data-social="facebook">{{> 'icons/socials/facebook'}}</a>
+        </li>
+        <li class="sharing-buttons__list-item">
+            <button class="sharing-buttons__list-link" title="{{t 'Copy link'}}" data-social="copy-link" data-copy-link="{{url absolute='true'}}">
+                {{> 'icons/link'}}
+                <span class="sharing-buttons__tooltip" role="tooltip" aria-hidden="true">{{t 'Link copied'}}</span>
+            </button>
         </li>
         <li class="sharing-buttons__list-item">
             <a href="https://x.com/intent/post?url={{url absolute=true}}&amp;text={{encode title}}" title="{{t 'Share on {social}' social='X'}}" target="_blank" rel="noopener" class="sharing-buttons__list-link" data-social="x">{{> 'icons/socials/x'}}</a>
@@ -15,6 +22,12 @@
                 {{> 'icons/link'}}
                 <span class="sharing-buttons__tooltip" role="tooltip" aria-hidden="true">{{t 'Link copied'}}</span>
             </button>
+        </li>-->
+        <li class="sharing-buttons__list-item">
+            <a href="https://bsky.app/intent/compose?text={{encode title}} {{url absolute=true}}" title="{{t 'Share on {social}' social='X'}}" target="_blank" rel="noopener" class="sharing-buttons__list-link" data-social="x"><i class="fa-brands fa-bluesky"></i></a>
+        </li>
+        <li class="sharing-buttons__list-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute=true}}&amp;title={{encode title}}" title="{{t 'Share on {social}' social='LinkedIn'}}" target="_blank" rel="noopener" class="sharing-buttons__list-link" data-social="linkedin"><i class="fa-brands fa-linkedin"></i></a>
         </li>
     </ul>
 </div>
