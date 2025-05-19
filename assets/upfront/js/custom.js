@@ -1,5 +1,5 @@
 //PORTAL PAGE
 
-$( document ).ready(function() {
-    console.log( "ready!" );
-});
+function initCustomJS(){
+	console.log('Upfront customs running')
+}
