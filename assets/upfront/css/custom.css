@@ -43,11 +43,11 @@ div.upfront-table.fixed-left table {
 
 div.upfront-table.fixed-left table td,
 div.upfront-table.fixed-left table th {
-	background: #b0a8ba;
 }
 
  div.upfront-table.fixed-left table tr>th:first-child,
  div.upfront-table.fixed-left table tr>td:first-child {
     position: sticky;
     left: 0;
+	background: #b0a8ba;
  }
