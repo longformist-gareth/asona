@@ -17,3 +17,8 @@ h1.article-header__title,
 	font-weight: bold;
 	font-style: normal;
 }
+
+.article figcaption {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+}
