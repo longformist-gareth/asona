@@ -1,4 +1,4 @@
-<article class="post-card {{post_class}}" data-layout="{{layout}}" data-has-featured-image="{{#if feature_image}}true{{else}}false{{/if}}">
+<article class="post-card {{post_class}} post-{{@index}}" data-layout="{{layout}}" data-has-featured-image="{{#if feature_image}}true{{else}}false{{/if}}">
 
     {{#if feature_image}}
     {{!-- Using asona_head we are adding this link preload to the document head. --}}
@@ -43,7 +43,7 @@
                     {{#has visibility='members'}}
                         {{t 'Members only'}}
                     {{else}}
-                        {{t 'Paid-members only'}}
+                        {{t 'Subscriber only'}}
                     {{/has}}
                 </p>
             {{/has}}

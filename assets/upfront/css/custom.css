@@ -10,3 +10,9 @@ body, .asona-comments-iframe h1, .asona-comments-iframe h2, .asona-comments-ifra
 .article-sharing .sharing-buttons__list-link {
 	font-size: 2.5rem;
 }
+
+h1.article-header__title {
+	font-family: 'LDN Kono ExtraBold';
+	font-weight: bold;
+	font-style: normal;
+}
