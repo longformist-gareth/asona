@@ -22,3 +22,30 @@ h1.article-header__title,
     padding-left: 1.6rem;
     padding-right: 1.6rem;
 }
+
+/* TABLE STYLES */
+
+div.upfront-table th, div.upfront-table .header-row {
+	font-weight: bold;	
+}
+
+div.upfront-table.fixed-left {
+  width: 100%;
+  overflow-x: scroll;
+  margin-left: 5em;
+  overflow-y: visible;
+  padding: 0;
+}
+
+div.upfront-table.fixed-left th {
+  position: absolute;
+  width: 5em;
+  left: 0;
+  top: auto;
+  border-top-width: 2px;
+  margin-top: -1px;
+}
+
+div.upfront-table.fixed-left th:before {
+  content: 'Row ';
+}
