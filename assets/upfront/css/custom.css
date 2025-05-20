@@ -50,4 +50,5 @@ div.upfront-table.fixed-left table th {
     position: sticky;
     left: 0;
 	background: rgb(224 224 224);
+	padding-left: 0.5rem;
  }
