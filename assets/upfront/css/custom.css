@@ -56,5 +56,5 @@ div.upfront-table.fixed-left table .col-headers td {
  /* HELPER CLASSES */
 
  .hide-me {
- 	display: none;
+ 	display: none !important;
  }
