@@ -58,3 +58,7 @@ div.upfront-table.fixed-left table .col-headers td {
  .hide-me {
  	display: none !important;
  }
+
+ .hide me img:before {
+ 	content: "Advertising";
+ }
