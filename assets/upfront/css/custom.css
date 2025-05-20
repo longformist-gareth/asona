@@ -61,4 +61,7 @@ div.upfront-table.fixed-left table .col-headers td {
 
  .upfront-advertising::before {
  	content: "Advertising";
+    background: #FFf0EF;
+    padding: 0.3rem 0.8rem 1.3rem 0.8rem;
+
  }
