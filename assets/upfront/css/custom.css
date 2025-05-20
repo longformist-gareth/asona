@@ -25,27 +25,52 @@ h1.article-header__title,
 
 /* TABLE STYLES */
 
-div.upfront-table th, div.upfront-table .header-row {
-	font-weight: bold;	
+div.upfront-table.fixed-left table {
+  white-space: nowrap;
+  margin: 0;
+  border: none;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
 }
 
-div.upfront-table.fixed-left {
-  width: 100%;
-  overflow-x: scroll;
-  margin-left: 5em;
-  overflow-y: visible;
-  padding: 0;
+div.upfront-table.fixed-left table td,
+div.upfront-table.fixed-left table th {
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
 }
 
-div.upfront-table.fixed-left th {
-  position: absolute;
-  width: 5em;
+div.upfront-table.fixed-left table thead th {
+  padding: 3px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 25vw;
+  background: white;
+}
+
+div.upfront-table.fixed-left table td {
+  background: #fff;
+  padding: 4px 5px;
+  text-align: center;
+}
+
+div.upfront-table.fixed-left table tbody th {
+  font-weight: 100;
+  font-style: italic;
+  text-align: left;
+  position: relative;
+}
+
+div.upfront-table.fixed-left table thead th:first-child {
+  position: sticky;
   left: 0;
-  top: auto;
-  border-top-width: 2px;
-  margin-top: -1px;
+  z-index: 2;
 }
 
-div.upfront-table.fixed-left th:before {
-  content: 'Row ';
+div.upfront-table.fixed-left  table tbody th {
+  position: sticky;
+  left: 0;
+  background: white;
+  z-index: 1;
 }
