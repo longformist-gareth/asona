@@ -59,6 +59,8 @@ div.upfront-table.fixed-left table .col-headers td {
  	display: none !important;
  }
 
- .hide-me img::before {
+ .hide-me
+
+ .upfront-advertising::before {
  	content: "Advertising";
  }
