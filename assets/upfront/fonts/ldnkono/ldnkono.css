@@ -38,3 +38,21 @@
  font-weight: bold;
  font-style: normal;
 }
+
+@font-face {
+ font-family: 'LDN Kono Hairline';
+ src: url('LDNKono-Hairline.woff2') format('woff2');
+ src: url('LDNKono-Hairline.woff') format('woff');
+ font-weight: normal;
+ font-style: normal;
+}
+
+
+@font-face {
+ font-family: 'LDN Kono Light';
+ src: url('LDNKono-Light.woff2') format('woff2');
+ src: url('LDNKono-Light.woff') format('woff');
+ font-weight: normal;
+ font-style: normal;
+}
+
