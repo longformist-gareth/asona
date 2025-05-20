@@ -41,7 +41,7 @@ div.upfront-table.fixed-left table {
     border: none;
 }
 
-div.upfront-table.fixed-left table th {
+div.upfront-table.fixed-left table .col-headers td {
 	font-weight: bold;
 }
 
