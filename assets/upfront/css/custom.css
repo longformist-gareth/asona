@@ -26,9 +26,9 @@ h1.article-header__title,
 /* TABLE STYLES */
 
 div.upfront-table.fixed-left {
-  max-width: 500px;
+  max-width: 100%;
   margin: auto;
-  margin-top: 3rem;
+  margin-top: 1rem;
   overflow-x: auto;
 }
 
@@ -43,8 +43,7 @@ div.upfront-table.fixed-left table {
 
 div.upfront-table.fixed-left table td,
 div.upfront-table.fixed-left table th {
-  border: 1px solid black;
-  padding: 0.5rem 1rem;
+	background: #b0a8ba;
 }
 
  div.upfront-table.fixed-left table tr>th:first-child,
