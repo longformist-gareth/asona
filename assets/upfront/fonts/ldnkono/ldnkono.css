@@ -30,3 +30,11 @@
  font-weight: bold;
  font-style: italic;
 }
+
+@font-face {
+ font-family: 'LDN Kono ExtraBold';
+ src: url('LDNKono-ExtraBold.woff2') format('woff2');
+ src: url('LDNKono-ExtraBold.woff') format('woff');
+ font-weight: bold;
+ font-style: normal;
+}
