@@ -11,7 +11,8 @@ body, .asona-comments-iframe h1, .asona-comments-iframe h2, .asona-comments-ifra
 	font-size: 2.5rem;
 }
 
-h1.article-header__title {
+h1.article-header__title,
+.home-template .post-0 h2 {
 	font-family: 'LDN Kono ExtraBold';
 	font-weight: bold;
 	font-style: normal;
