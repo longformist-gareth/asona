@@ -25,13 +25,20 @@ h1.article-header__title,
 
 /* TABLE STYLES */
 
+div.upfront-table.fixed-left {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 3rem;
+  overflow-x: auto;
+}
+
 div.upfront-table.fixed-left table {
-  white-space: nowrap;
-  margin: 0;
-  border: none;
-  border-collapse: separate;
-  border-spacing: 0;
-  table-layout: fixed;
+  	white-space: nowrap;
+	border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: auto;
+    width: 100%;
+    border: none;
 }
 
 div.upfront-table.fixed-left table td,
@@ -40,43 +47,8 @@ div.upfront-table.fixed-left table th {
   padding: 0.5rem 1rem;
 }
 
-div.upfront-table.fixed-left table thead th {
-  padding: 3px;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  width: 25vw;
-  background: white;
-}
-
-div.upfront-table.fixed-left table td {
-  background: #fff;
-  padding: 4px 5px;
-  text-align: center;
-}
-
-div.upfront-table.fixed-left table tbody th {
-  font-weight: 100;
-  font-style: italic;
-  text-align: left;
-  position: relative;
-}
-
-div.upfront-table.fixed-left table thead th:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 2;
-}
-
-div.upfront-table.fixed-left  table tbody th {
-  position: sticky;
-  left: 0;
-  background: white;
-  z-index: 1;
-}
-
-[role="region"][aria-labelledby][tabindex] {
-  width: 100%;
-  max-height: 98vh;
-  overflow: auto;
-}
+ div.upfront-table.fixed-left table tr>th:first-child,
+ div.upfront-table.fixed-left table tr>td:first-child {
+    position: sticky;
+    left: 0;
+ }
