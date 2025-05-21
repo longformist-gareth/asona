@@ -85,6 +85,10 @@ img.upfront-prom-small {
 	display: none;
 }
 
+ .upfront-prom a {
+ 	border: 0;
+ }
+
 @media (max-width: 900px) {
  	img.upfront-prom-large {
 		display: none;
