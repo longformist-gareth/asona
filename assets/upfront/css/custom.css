@@ -68,7 +68,7 @@ div.upfront-table.fixed-left table .col-headers td {
 }
 
 .upfront-prom span {
-	text-align: center;
+	text-align: left;
 }
 
  .upfront-prom {
@@ -90,6 +90,6 @@ img.upfront-prom-small {
 		display: none;
 	}
 	img.upfront-prom-small {
-		display: block;
+		display: inline;
 	}
 }
