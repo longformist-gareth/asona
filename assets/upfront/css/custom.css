@@ -92,4 +92,7 @@ img.upfront-prom-small {
 	img.upfront-prom-small {
 		display: inline;
 	}
+	.upfront-prom span {
+		text-align: center;
+	}
 }
