@@ -64,7 +64,7 @@ div.upfront-table.fixed-left table .col-headers td {
  .upfront-prom::before {
  	content: "Advertising";
  	font-size: 0.8rem;
- 	color: #323e48;
+ 	color: #FF6F61;
 }
 
 .upfront-prom span {
@@ -72,7 +72,8 @@ div.upfront-table.fixed-left table .col-headers td {
 }
 
  .upfront-prom {
-	background: #EDEDEF;
+	/* background: #EDEDEF; */
+	background: #FFf0EF;
     padding: 0.3rem 0.8rem 1.3rem 0.8rem;
     border-top-left-radius: 0.4rem;
     border-top-right-radius: 0.4rem;
