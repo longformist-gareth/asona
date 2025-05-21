@@ -65,6 +65,7 @@ div.upfront-table.fixed-left table .col-headers td {
  	content: "Advertising";
  	font-size: 0.8rem;
  	color: #323e48;
+ 	text-align: left;
 }
 
  .upfront-prom {
@@ -74,6 +75,7 @@ div.upfront-table.fixed-left table .col-headers td {
     border-top-right-radius: 0.4rem;
     border-bottom-right-radius: 0.4rem;
     border-bottom-left-radius: 0.4rem;
+    text-align: center;
  }
 
 img.upfront-prom-small {
