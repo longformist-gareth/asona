@@ -79,8 +79,13 @@ div.upfront-table.fixed-left table .col-headers td {
     border-top-right-radius: 0.4rem;
     border-bottom-right-radius: 0.4rem;
     border-bottom-left-radius: 0.4rem;
-    text-align: cleft;
+    text-align: left;
  }
+
+.upfront-prom#second {
+	border-top-right-radius: 2.4rem;
+	border-bottom-left-radius: 2.4rem;
+}
 
 img.upfront-prom-small {
 	display: none;
