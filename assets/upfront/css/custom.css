@@ -59,13 +59,32 @@ div.upfront-table.fixed-left table .col-headers td {
  	display: none !important;
  }
 
- .upfront-advertising::before {
+/* ADVERTS */
+
+ .upfront-prom::before {
  	content: "Advertising";
  	font-size: 0.8rem;
- 	color: #FF6F61;
+ 	color: #323e48;
 }
 
- .upfront-advertising {
-    background: #FFf0EF;
+ .upfront-prom {
+	background: #EDEDEF;
     padding: 0.3rem 0.8rem 1.3rem 0.8rem;
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
  }
+
+img.upfront-prom-small {
+	display: none;
+}
+
+@media (max-width: 900px) {
+ 	img.upfront-prom-large {
+		display: none;
+	}
+	img.upfront-prom-small {
+		display: block;
+	}
+}
