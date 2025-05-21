@@ -68,7 +68,7 @@ div.upfront-table.fixed-left table .col-headers td {
 }
 
 .upfront-prom span {
-	text-align: left;
+	text-align: center;
 }
 
  .upfront-prom {
@@ -78,7 +78,7 @@ div.upfront-table.fixed-left table .col-headers td {
     border-top-right-radius: 0.4rem;
     border-bottom-right-radius: 0.4rem;
     border-bottom-left-radius: 0.4rem;
-    text-align: center;
+    text-align: cleft;
  }
 
 img.upfront-prom-small {
