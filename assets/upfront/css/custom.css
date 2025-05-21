@@ -62,10 +62,13 @@ div.upfront-table.fixed-left table .col-headers td {
 /* ADVERTS */
 
  .upfront-prom::before {
- 	content: "Advertising";
+ 	content: "<span>Advertising</span>";
  	font-size: 0.8rem;
  	color: #323e48;
- 	text-align: left;
+}
+
+.upfront-prom span {
+	text-align: left;
 }
 
  .upfront-prom {
