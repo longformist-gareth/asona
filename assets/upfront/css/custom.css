@@ -69,6 +69,7 @@ div.upfront-table.fixed-left table .col-headers td {
 
 .upfront-prom span {
 	text-align: center;
+	display: block;
 }
 
  .upfront-prom {
