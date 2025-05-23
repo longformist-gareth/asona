@@ -36,6 +36,6 @@ function addPromos(){
             		console.log('ads initialized');
             	}
             });
-		}
+		});
 	}
 }
