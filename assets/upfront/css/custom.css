@@ -18,6 +18,10 @@ h1.article-header__title,
 	font-style: normal;
 }
 
+.home-template .featured-posts .post-0 h2 {
+	font-family: 'LDN Kono Medium';
+}
+
 .article figcaption {
     padding-left: 1.6rem;
     padding-right: 1.6rem;
