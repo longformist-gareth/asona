@@ -20,6 +20,7 @@ function addPromos(){
             		$(this).after(data);
             		console.log('ads initialized');
             	}
+            });
         });
 	};
 }
