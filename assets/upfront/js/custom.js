@@ -19,7 +19,6 @@ function addPromos(){
             	if(index == 0){
             		$(this).after(data);
             		console.log('ads initialized');
-            		break;
             	}
         });
 	};
