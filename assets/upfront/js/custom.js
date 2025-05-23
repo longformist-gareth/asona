@@ -18,6 +18,7 @@ function addPromos(){
 			$('.article-content p').each(function(index) {
             	if(index == 0){
             		$(this).after(data);
+            		console.log('ads initialized');
             		break;
             	}
         });
