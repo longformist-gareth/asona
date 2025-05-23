@@ -13,14 +13,19 @@ function addPromos(){
 	var sPromo = '';
 	if ($('.article-content').length) {
 
-		$.get("https://theupfront.media/assets/upfront/ajax/ajax_standardPromo.htm", function(data){
-            // Display the returned data in browser
+	   $.ajax({
+	        url: 'https://theupfront.media/assets/upfront/ajax/ajax_standardPromo.htm'
+	        type: 'GET'
+	        data: ''
+	        dataType: 'html'
+	        success: function(res, status) {
 			$('.article-content p').each(function(index) {
             	if(index == 0){
-            		$(this).after(data);
+            		$(this).after(res);
             		console.log('ads initialized');
             	}
             });
-        });
+	        }
+	    });
 	};
 }
