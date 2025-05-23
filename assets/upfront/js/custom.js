@@ -24,5 +24,18 @@ function addPromos(){
             	}
             });
 		 });
-	};
+	} else if ($('.home-template').length) {
+		$.ajax({
+	        url: 'https://theupfront.media/assets/upfront/ajax/ajax_standardPromo.htm',
+			cache: false
+		})
+		.done(function( html ) {
+			$('.posts-highlight').each(function(index) {
+            	if(index == 0){
+            		$(this).after('<div class="upfront-prom-wrapper hide-me" data-canvas-grid="content">' + html + '</div>');
+            		console.log('ads initialized');
+            	}
+            });
+		}
+	}
 }
