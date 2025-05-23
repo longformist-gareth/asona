@@ -32,7 +32,7 @@ function addPromos(){
 		.done(function( html ) {
 			$('.posts-highlight').each(function(index) {
             	if(index == 0){
-            		$(this).after('<div class="upfront-prom-wrapper hide-me" data-canvas-grid="content">' + html + '</div>');
+            		$(this).after('<section class="upfront-prom-wrapper"><div data-canvas-grid="content">' + html + '</div></section>');
             		console.log('ads initialized');
             	}
             });
