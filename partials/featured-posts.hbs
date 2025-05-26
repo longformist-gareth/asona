@@ -1,4 +1,4 @@
-{{#get 'posts' filter='tags:#homepage' limit='4' include='tags,authors' as |featured|}}
+{{#get 'posts' filter='featured:true' limit='4' include='tags,authors' as |featured|}}
 {{#if featured}}
 <div class="featured-posts section" data-canvas-grid="container" data-theme="accent">
     <h3 class="featured-posts__title">{{t 'Featured'}}</h3>
