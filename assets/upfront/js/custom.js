@@ -11,7 +11,7 @@ function addPortalCustomization(){
 
 function addPromos(){
 	var sPromo = '';
-	if ($('.article-content').length) {
+	if ($('.post-template .article-content').length) {
 		$.ajax({
 	        url: 'https://theupfront.media/assets/upfront/ajax/ajax_standardPromo.htm',
 			cache: false
