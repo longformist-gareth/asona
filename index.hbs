@@ -14,7 +14,7 @@
         {{!-- We are displaying the first 4 post in the highlight section
         so we need to start the loop from the 5th post. --}}
         {{#get 'posts' filter='tags:-nohomepage' include='tags,authors' as |belowhighlights|}}
-            {{#foreach belowhighlights}}
+            {{#foreach belowhighlights from='5'}}
                 {{> 'post-card' image_sizes='posts-feed'}}
             {{/foreach}}
         {{/get}}
