@@ -1,4 +1,4 @@
-{{#get 'posts' filter='homepage:true' limit='4' include='tags,authors' as |highlights|}}
+{{#get 'posts' filter='tags:homepage' limit='4' include='tags,authors' as |highlights|}}
 <div class="posts-highlight section" data-highlight="{{#match style 'Classic'}}classic{{else}}modern{{/match}}" data-layout-grid="columns" data-section="first">
     {{!-- custom style param 'style' can't be accessed inside foreach so we have to do it twice --}}
     {{#match style '=' 'Classic'}}
