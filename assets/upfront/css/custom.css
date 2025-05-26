@@ -76,6 +76,10 @@ div.upfront-table.fixed-left table .col-headers td {
 	display: block;
 }
 
+.content-cta .upfront-prom {
+	display: none;
+}
+
  .upfront-prom-wrapper {
 	background: #FFf0EF;
 }

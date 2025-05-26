@@ -1,13 +1,13 @@
 {{{html}}}
 <aside class="content-cta section" data-theme="highlight">
     {{#has visibility='paid'}}
-        <h2 class="content-cta__title">{{t 'This content is for paying subscribers only'}}</h2>
+        <h2 class="content-cta__title">{{t 'Our supporters at Subscriber and Pro level have access to this full article'}}</h2>
     {{/has}}
     {{#has visibility='members'}}
         <h2 class="content-cta__title">{{t 'This content is for subscribers only'}}</h2>
     {{/has}}
     {{#has visibility='tiers'}}
-        <h2 class="content-cta__title">This post is for subscribers on the {{tiers}} only.</h2>
+        <h2 class="content-cta__title">Our supporters at {{tiers}} level have access to this full article</h2>
     {{/has}}
     {{#if @member}}
         <button class="button content-cta__button" data-portal="account/plans">{{t 'Upgrade your account'}}</button>
