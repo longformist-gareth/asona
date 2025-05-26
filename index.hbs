@@ -19,7 +19,7 @@
 
         {{!-- Posts per page are 18 but we need 4 more for the homepage (4 highlight + 18 grid posts)
         so we load additional from next page --}}
-        {{#get 'posts' include='tags,authors' limit=@config.posts_per_page page=pagination.next}}
+        {{#get 'posts' filter='tags:-nohomepage' include='tags,authors' limit=@config.posts_per_page page=pagination.next}}
             {{#foreach posts limit=4}}
                 {{> 'post-card' image_sizes='posts-feed'}}
             {{/foreach}}
