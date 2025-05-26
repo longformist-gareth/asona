@@ -13,16 +13,16 @@
 
         {{!-- We are displaying the first 4 post in the highlight section
         so we need to start the loop from the 5th post. --}}
-        {{#get 'posts' filter='tags:-nohomepage' include='tags,authors' as |highlights|}}
-            {{#foreach highlights from='5'}}
+        {{#get 'posts' filter='tags:-nohomepage' include='tags,authors' as |belowhighlights|}}
+            {{#foreach belowhighlights from='5'}}
                 {{> 'post-card' image_sizes='posts-feed'}}
             {{/foreach}}
         {{/get}}
 
         {{!-- Posts per page are 18 but we need 4 more for the homepage (4 highlight + 18 grid posts)
         so we load additional from next page --}}
-        {{#get 'posts' filter='tags:-nohomepage' include='tags,authors' limit=@config.posts_per_page page=pagination.next}}
-            {{#foreach posts limit=4}}
+        {{#get 'posts' filter='tags:-nohomepage' include='tags,authors' limit=@config.posts_per_page page=pagination.next as |extrahighlights|}}
+            {{#foreach extrahighlights limit=4}}
                 {{> 'post-card' image_sizes='posts-feed'}}
             {{/foreach}}
         {{/get}}
