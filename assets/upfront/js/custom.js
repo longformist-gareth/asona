@@ -12,7 +12,7 @@ function addPortalCustomization(){
 function addPromos(){
 	var sPromo = '';
 	if ($('.post-template .article-content').length) {
-		if($('article.article').hasClass('no-ads')){
+		if($('article.article').hasClass('tag-no-ads')){
 			//do nothing
 		} else {
 			$.ajax({
