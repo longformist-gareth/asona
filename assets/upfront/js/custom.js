@@ -12,18 +12,22 @@ function addPortalCustomization(){
 function addPromos(){
 	var sPromo = '';
 	if ($('.post-template .article-content').length) {
-		$.ajax({
-	        url: 'https://theupfront.media/assets/upfront/ajax/ajax_standardPromo.htm',
-			cache: false
-		})
-		  .done(function( html ) {
-		    $('.article-content p').each(function(index) {
-            	if(index == 0){
-            		$(this).after(html);
-            		console.log('ads initialized');
-            	}
-            });
-		 });
+		if($('article.article').hasClass('no-ads')){
+			//do nothing
+		} else {
+			$.ajax({
+		        url: 'https://theupfront.media/assets/upfront/ajax/ajax_standardPromo.htm',
+				cache: false
+			})
+			  .done(function( html ) {
+			    $('.article-content p').each(function(index) {
+	            	if(index == 0){
+	            		$(this).after(html);
+	            		console.log('ads initialized');
+	            	}
+	            });
+			 });
+		}
 	} else if ($('.home-template').length) {
 		$.ajax({
 	        url: 'https://theupfront.media/assets/upfront/ajax/ajax_standardPromo.htm',
