@@ -18,6 +18,7 @@
             <time class="article-header__meta article-header__meta--date" datetime="{{date format='YYYY-MM-DD'}}">{{date}}</time>
             {{#if reading_time}}
             <span class="article-header__meta article-header__meta--read-time">{{reading_time minute=(t '1 min read') minutes=(t '% min read')}}</span>
+            <span class="article-header__meta article-header__meta--length"></span>
             {{/if}}
         </div>
         {{/is}}
