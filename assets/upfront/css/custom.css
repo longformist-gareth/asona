@@ -57,6 +57,10 @@ div.upfront-table.fixed-left table .col-headers td {
 	padding-left: 0.5rem;
  }
 
+p.post-card__access {
+	display: none;
+}
+
  /* HELPER CLASSES */
 
  .hide-me {
