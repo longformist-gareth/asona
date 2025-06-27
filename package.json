@@ -28,7 +28,7 @@
         "apalodi"
     ],
     "config": {
-        "posts_per_page": 18,
+        "posts_per_page": 15,
         "card_assets": {
             "exclude": [
                 "blockquote",
