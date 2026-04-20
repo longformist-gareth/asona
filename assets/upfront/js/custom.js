@@ -4,9 +4,24 @@ function initCustomJS(){
 	console.log('Upfront customs running');
 	addPortalCustomization();
 	//addPromos()
+	flipAdvertSize();
 }
 
 function addPortalCustomization(){
+}
+
+function flipAdvertSize(){
+
+	if ($('.post-template .article-content').length) {
+		if($('article.article').hasClass('tag-no-ads')){
+			//do nothing
+		} else {
+			var width = $(window).width();
+			if ((width >= 900){
+				$('#prom').attr('src', $('#upfront-prom').data('wide'));
+			}
+		}
+	}
 }
 
 function addPromos(){
