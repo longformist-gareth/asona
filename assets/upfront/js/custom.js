@@ -11,14 +11,17 @@ function addPortalCustomization(){
 }
 
 function flipAdvertSize(){
-
+	console.log('resizing ad...');
 	if ($('.post-template .article-content').length) {
 		if($('article.article').hasClass('tag-no-ads')){
+			console.log('no auto ads');
 			//do nothing
 		} else {
+			console.log('show ads');
 			var width = $(window).width();
+			console.log(width);
 			if (width >= 900){
-				$('#prom').attr('src', $('#upfront-prom').data('wide'));
+				$('#prom').attr('src', $('.upfront-prom').data('wide'));
 			}
 		}
 	}
