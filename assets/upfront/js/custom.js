@@ -3,7 +3,7 @@
 function initCustomJS(){
 	console.log('Upfront customs running');
 	addPortalCustomization();
-	addPromos()
+	//addPromos()
 }
 
 function addPortalCustomization(){
