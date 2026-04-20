@@ -17,7 +17,7 @@ function flipAdvertSize(){
 			//do nothing
 		} else {
 			var width = $(window).width();
-			if ((width >= 900){
+			if (width >= 900){
 				$('#prom').attr('src', $('#upfront-prom').data('wide'));
 			}
 		}
