@@ -72,7 +72,7 @@ p.post-card__access {
  .upfront-prom::before {
  	content: "Advertising";
  	font-size: 0.8rem;
- 	color: #FF6F61;
+ 	color: rgba(0, 0, 0, 0.9);
 }
 
 .upfront-prom span {
