@@ -114,6 +114,8 @@ img.upfront-prom-small {
 
  .upfront-prom a {
  	border: 0;
+	display: inline-block;
+    text-align: center;	 
  }
 
 @media (max-width: 900px) {
